@@ -30,7 +30,7 @@ function setupInteractiveGames(){
  }
 
  function quizQuest(key,title,en,desc,bank){
-  let set=shuffle(bank).slice(0,5),i=0,score=0,streak=0;
+  let set=shuffle(bank).slice(0,5).map(row=>{let opts=shuffle(row[1].map((text,n)=>({text,correct:n===row[2]})));return[row[0],opts.map(x=>x.text),opts.findIndex(x=>x.correct),row[3]]}),i=0,score=0,streak=0;
   const draw=()=>{if(i===set.length){let record=saveBest(key,score);frame(title,en+' · FINISH','完成五个小挑战！每一轮练习都让你更熟一点。Five rounds done—your Chinese is growing.','<div class="win-panel"><div class="win-stars">'+(score>=40?'★★★★★':score>=20?'★★★★☆':'★★★☆☆')+'</div><h3>'+score+' 分 · '+streak+' 连胜</h3><p>'+(score>=40?'太棒了，你已经熟练掌握这些表达！':'完成就是进步，再来一次试试新的题目！')+'</p><p>'+(record?'🏆 新纪录！个人最佳已更新。':'保持练习，刷新自己的记录。')+'</p><button class="btn btn-primary" id="qq-again">再玩一轮 · Play again</button></div>');document.querySelector('#qq-again').onclick=()=>quizQuest(key,title,en,desc,bank);return}
    let [q,opts,ans,why]=set[i],cards=opts.map((x,n)=>'<button class="game-choice" data-answer="'+n+'">'+x+'</button>').join('');
    frame(title,en+' · ROUND '+(i+1)+' / '+set.length,desc,'<div class="score-strip"><span>🎯 进度 <b>'+(i+1)+' / '+set.length+'</b></span><span>⭐ 得分 <b>'+score+'</b></span><span>🔥 连胜 <b>'+streak+'</b></span></div><div class="play-box"><div class="game-prompt">'+q+'</div><div class="game-options">'+cards+'</div><div class="game-feedback" id="qq-feedback">选一个答案试试！Choose one and give it a try.</div><div class="game-controls"><button class="btn btn-primary" id="qq-next" disabled>下一题 · Next</button></div></div>');
