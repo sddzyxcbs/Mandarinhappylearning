@@ -1696,6 +1696,406 @@ window.CN_CONTENT={
       "cat": "生活",
       "ex": "请注意休息。",
       "exen": "Please remember to rest."
+    },
+    {
+      "han": "牙疼",
+      "py": "yá téng",
+      "en": "to have a toothache · 牙疼",
+      "cat": "健康",
+      "ex": "我牙疼，想看病。",
+      "exen": "I have a toothache and would like to see a doctor."
+    },
+    {
+      "han": "头疼",
+      "py": "tóu téng",
+      "en": "to have a headache · 头疼",
+      "cat": "健康",
+      "ex": "我今天有点儿头疼。",
+      "exen": "I have a bit of a headache today."
+    },
+    {
+      "han": "嗓子疼",
+      "py": "sǎng zi téng",
+      "en": "to have a sore throat · 嗓子疼",
+      "cat": "健康",
+      "ex": "我嗓子疼，不想喝冷水。",
+      "exen": "I have a sore throat and do not want cold water."
+    },
+    {
+      "han": "量体温",
+      "py": "liáng tǐ wēn",
+      "en": "to take one’s temperature · 量体温",
+      "cat": "健康",
+      "ex": "护士给我量体温。",
+      "exen": "The nurse takes my temperature."
+    },
+    {
+      "han": "看病",
+      "py": "kàn bìng",
+      "en": "to see a doctor · 看病",
+      "cat": "健康",
+      "ex": "我想去医院看病。",
+      "exen": "I would like to go to the hospital to see a doctor."
+    },
+    {
+      "han": "行李箱",
+      "py": "xíng li xiāng",
+      "en": "suitcase · 行李箱",
+      "cat": "出行",
+      "ex": "我的行李箱有点儿重。",
+      "exen": "My suitcase is a little heavy."
+    },
+    {
+      "han": "迟到",
+      "py": "chí dào",
+      "en": "to be late · 迟到",
+      "cat": "出行",
+      "ex": "我们快走吧，别迟到。",
+      "exen": "Let’s go quickly so we are not late."
+    },
+    {
+      "han": "车厢",
+      "py": "chē xiāng",
+      "en": "train carriage; car · 车厢",
+      "cat": "出行",
+      "ex": "我的座位在五号车厢。",
+      "exen": "My seat is in carriage five."
+    },
+    {
+      "han": "座位",
+      "py": "zuò wèi",
+      "en": "seat · 座位",
+      "cat": "出行",
+      "ex": "请问，我的座位在哪里？",
+      "exen": "Excuse me, where is my seat?"
+    },
+    {
+      "han": "候车室",
+      "py": "hòu chē shì",
+      "en": "waiting room · 候车室",
+      "cat": "出行",
+      "ex": "我们在候车室等车。",
+      "exen": "We are waiting for the train in the waiting room."
+    },
+    {
+      "han": "春天",
+      "py": "chūn tiān",
+      "en": "spring · 春天",
+      "cat": "生活",
+      "ex": "春天很暖和。",
+      "exen": "Spring is warm."
+    },
+    {
+      "han": "夏天",
+      "py": "xià tiān",
+      "en": "summer · 夏天",
+      "cat": "生活",
+      "ex": "夏天我喜欢喝茶。",
+      "exen": "In summer, I like drinking tea."
+    },
+    {
+      "han": "秋天",
+      "py": "qiū tiān",
+      "en": "autumn; fall · 秋天",
+      "cat": "生活",
+      "ex": "秋天的天气很好。",
+      "exen": "The weather is nice in autumn."
+    },
+    {
+      "han": "冬天",
+      "py": "dōng tiān",
+      "en": "winter · 冬天",
+      "cat": "生活",
+      "ex": "冬天这里很冷。",
+      "exen": "It is very cold here in winter."
+    },
+    {
+      "han": "刮风",
+      "py": "guā fēng",
+      "en": "to be windy · 刮风",
+      "cat": "生活",
+      "ex": "今天刮风，别忘了关窗。",
+      "exen": "It is windy today; remember to close the window."
+    },
+    {
+      "han": "公寓",
+      "py": "gōng yù",
+      "en": "apartment · 公寓",
+      "cat": "生活",
+      "ex": "我住在一个小公寓里。",
+      "exen": "I live in a small apartment."
+    },
+    {
+      "han": "房租",
+      "py": "fáng zū",
+      "en": "rent · 房租",
+      "cat": "生活",
+      "ex": "这个房间的房租多少钱？",
+      "exen": "How much is the rent for this room?"
+    },
+    {
+      "han": "钥匙",
+      "py": "yào shi",
+      "en": "key · 钥匙",
+      "cat": "生活",
+      "ex": "我的钥匙在桌子上。",
+      "exen": "My key is on the table."
+    },
+    {
+      "han": "阳台",
+      "py": "yáng tái",
+      "en": "balcony · 阳台",
+      "cat": "生活",
+      "ex": "阳台上有一把椅子。",
+      "exen": "There is a chair on the balcony."
+    },
+    {
+      "han": "厨房",
+      "py": "chú fáng",
+      "en": "kitchen · 厨房",
+      "cat": "生活",
+      "ex": "厨房在房间旁边。",
+      "exen": "The kitchen is next to the room."
+    },
+    {
+      "han": "词典",
+      "py": "cí diǎn",
+      "en": "dictionary · 词典",
+      "cat": "学习",
+      "ex": "这个词我不认识，我查一下词典。",
+      "exen": "I do not know this word; I will look it up in the dictionary."
+    },
+    {
+      "han": "课本",
+      "py": "kè běn",
+      "en": "textbook · 课本",
+      "cat": "学习",
+      "ex": "请把课本打开。",
+      "exen": "Please open the textbook."
+    },
+    {
+      "han": "黑板",
+      "py": "hēi bǎn",
+      "en": "blackboard · 黑板",
+      "cat": "学习",
+      "ex": "老师把新词写在黑板上。",
+      "exen": "The teacher writes the new words on the blackboard."
+    },
+    {
+      "han": "句子",
+      "py": "jù zi",
+      "en": "sentence · 句子",
+      "cat": "学习",
+      "ex": "请用这个词说一个句子。",
+      "exen": "Please use this word to make a sentence."
+    },
+    {
+      "han": "复习",
+      "py": "fù xí",
+      "en": "to review · 复习",
+      "cat": "学习",
+      "ex": "我晚上复习今天的课。",
+      "exen": "I review today’s lesson in the evening."
+    },
+    {
+      "han": "有空",
+      "py": "yǒu kòng",
+      "en": "to be free; have time · 有空",
+      "cat": "生活",
+      "ex": "你周末有空吗？",
+      "exen": "Are you free this weekend?"
+    },
+    {
+      "han": "聊天",
+      "py": "liáo tiān",
+      "en": "to chat · 聊天",
+      "cat": "生活",
+      "ex": "我喜欢和朋友聊天。",
+      "exen": "I like chatting with friends."
+    },
+    {
+      "han": "欢迎",
+      "py": "huān yíng",
+      "en": "to welcome · 欢迎",
+      "cat": "生活",
+      "ex": "欢迎你来我家。",
+      "exen": "You are welcome to come to my home."
+    },
+    {
+      "han": "见面",
+      "py": "jiàn miàn",
+      "en": "to meet; see each other · 见面",
+      "cat": "生活",
+      "ex": "我们星期六见面吧。",
+      "exen": "Let’s meet on Saturday."
+    },
+    {
+      "han": "散步",
+      "py": "sàn bù",
+      "en": "to take a walk · 散步",
+      "cat": "生活",
+      "ex": "晚饭以后我们去散步。",
+      "exen": "Let’s take a walk after dinner."
+    },
+    {
+      "han": "东边",
+      "py": "dōng bian",
+      "en": "east side · 东边",
+      "cat": "出行",
+      "ex": "学校在公园的东边。",
+      "exen": "The school is on the east side of the park."
+    },
+    {
+      "han": "西边",
+      "py": "xī bian",
+      "en": "west side · 西边",
+      "cat": "出行",
+      "ex": "地铁站在商店的西边。",
+      "exen": "The subway station is on the west side of the shop."
+    },
+    {
+      "han": "对面",
+      "py": "duì miàn",
+      "en": "opposite; across from · 对面",
+      "cat": "出行",
+      "ex": "银行在饭店对面。",
+      "exen": "The bank is across from the restaurant."
+    },
+    {
+      "han": "旁边",
+      "py": "páng biān",
+      "en": "beside; next to · 旁边",
+      "cat": "出行",
+      "ex": "药店在车站旁边。",
+      "exen": "The pharmacy is next to the station."
+    },
+    {
+      "han": "经过",
+      "py": "jīng guò",
+      "en": "to pass; go past · 经过",
+      "cat": "出行",
+      "ex": "去学校要经过一个公园。",
+      "exen": "You pass a park on the way to school."
+    },
+    {
+      "han": "银行卡",
+      "py": "yín háng kǎ",
+      "en": "bank card · 银行卡",
+      "cat": "生活",
+      "ex": "可以用银行卡付款吗？",
+      "exen": "Can I pay by bank card?"
+    },
+    {
+      "han": "扫码",
+      "py": "sǎo mǎ",
+      "en": "to scan a code · 扫码",
+      "cat": "生活",
+      "ex": "我可以扫码付款。",
+      "exen": "I can scan the code to pay."
+    },
+    {
+      "han": "发票",
+      "py": "fā piào",
+      "en": "invoice; fapiao · 发票",
+      "cat": "生活",
+      "ex": "请问可以开发票吗？",
+      "exen": "Could I have a fapiao, please?"
+    },
+    {
+      "han": "零钱",
+      "py": "líng qián",
+      "en": "small change · 零钱",
+      "cat": "生活",
+      "ex": "我有零钱，可以付现金。",
+      "exen": "I have some change and can pay in cash."
+    },
+    {
+      "han": "二维码",
+      "py": "èr wéi mǎ",
+      "en": "QR code · 二维码",
+      "cat": "生活",
+      "ex": "请给我看一下二维码。",
+      "exen": "Please show me the QR code."
+    },
+    {
+      "han": "起床",
+      "py": "qǐ chuáng",
+      "en": "to get up · 起床",
+      "cat": "生活",
+      "ex": "我每天七点起床。",
+      "exen": "I get up at seven every day."
+    },
+    {
+      "han": "上班",
+      "py": "shàng bān",
+      "en": "to go to work · 上班",
+      "cat": "生活",
+      "ex": "我坐地铁去上班。",
+      "exen": "I take the subway to work."
+    },
+    {
+      "han": "下班",
+      "py": "xià bān",
+      "en": "to finish work · 下班",
+      "cat": "生活",
+      "ex": "我六点下班。",
+      "exen": "I finish work at six."
+    },
+    {
+      "han": "睡觉",
+      "py": "shuì jiào",
+      "en": "to sleep; go to bed · 睡觉",
+      "cat": "生活",
+      "ex": "我晚上十一点睡觉。",
+      "exen": "I go to bed at eleven in the evening."
+    },
+    {
+      "han": "洗澡",
+      "py": "xǐ zǎo",
+      "en": "to take a shower · 洗澡",
+      "cat": "生活",
+      "ex": "我回家以后先洗澡。",
+      "exen": "I take a shower first after I get home."
+    },
+    {
+      "han": "开心",
+      "py": "kāi xīn",
+      "en": "happy; glad · 开心",
+      "cat": "生活",
+      "ex": "认识你我很开心。",
+      "exen": "I am very happy to meet you."
+    },
+    {
+      "han": "累",
+      "py": "lèi",
+      "en": "tired · 累",
+      "cat": "生活",
+      "ex": "我今天有点儿累。",
+      "exen": "I am a little tired today."
+    },
+    {
+      "han": "饿",
+      "py": "è",
+      "en": "hungry · 饿",
+      "cat": "生活",
+      "ex": "我饿了，想吃米饭。",
+      "exen": "I am hungry and would like to eat rice."
+    },
+    {
+      "han": "渴",
+      "py": "kě",
+      "en": "thirsty · 渴",
+      "cat": "生活",
+      "ex": "我渴了，想喝水。",
+      "exen": "I am thirsty and would like some water."
+    },
+    {
+      "han": "方便",
+      "py": "fāng biàn",
+      "en": "convenient; suitable · 方便",
+      "cat": "生活",
+      "ex": "现在打电话方便吗？",
+      "exen": "Is it convenient to call now?"
     }
   ],
   "lessons": [
@@ -5593,6 +5993,1155 @@ window.CN_CONTENT={
         ],
         "answer": 0,
         "why": "比较结构按“A + 比 + B + 形容词”排列。"
+      }
+    },
+    {
+      "slug": "health-follow-up",
+      "type": "vocabulary",
+      "level": "Starter · Unit 41",
+      "title": "在诊所说明症状",
+      "subtitle": "Describe a simple symptom and ask for medical help.",
+      "goal": "在不舒服时说明身体状况，并看懂诊所里常见的表达。",
+      "duration": "10 分钟",
+      "tags": [
+        "实用词汇",
+        "中英对照"
+      ],
+      "intro": "在不舒服时说明身体状况，并看懂诊所里常见的表达。 每个词都配有拼音和生活化例句。",
+      "words": [
+        [
+          "牙疼",
+          "yá téng",
+          "to have a toothache",
+          "我牙疼，想看病。",
+          "I have a toothache and would like to see a doctor."
+        ],
+        [
+          "头疼",
+          "tóu téng",
+          "to have a headache",
+          "我今天有点儿头疼。",
+          "I have a bit of a headache today."
+        ],
+        [
+          "嗓子疼",
+          "sǎng zi téng",
+          "to have a sore throat",
+          "我嗓子疼，不想喝冷水。",
+          "I have a sore throat and do not want cold water."
+        ],
+        [
+          "量体温",
+          "liáng tǐ wēn",
+          "to take one’s temperature",
+          "护士给我量体温。",
+          "The nurse takes my temperature."
+        ],
+        [
+          "看病",
+          "kàn bìng",
+          "to see a doctor",
+          "我想去医院看病。",
+          "I would like to go to the hospital to see a doctor."
+        ]
+      ],
+      "tip": "先听拼音并跟读，再遮住英文自己回忆词义。最后试着替换例句中的一个词。",
+      "exercise": {
+        "q": "“to have a toothache”对应哪个词？",
+        "options": [
+          "牙疼",
+          "头疼",
+          "嗓子疼"
+        ],
+        "answer": 0,
+        "why": "“牙疼”读作 yá téng，意思是 to have a toothache."
+      }
+    },
+    {
+      "slug": "train-station-words",
+      "type": "vocabulary",
+      "level": "Starter · Unit 42",
+      "title": "火车站里怎么说",
+      "subtitle": "Use practical words at the train station.",
+      "goal": "在车站确认车厢、座位和候车信息。",
+      "duration": "10 分钟",
+      "tags": [
+        "实用词汇",
+        "中英对照"
+      ],
+      "intro": "在车站确认车厢、座位和候车信息。 每个词都配有拼音和生活化例句。",
+      "words": [
+        [
+          "行李箱",
+          "xíng li xiāng",
+          "suitcase",
+          "我的行李箱有点儿重。",
+          "My suitcase is a little heavy."
+        ],
+        [
+          "迟到",
+          "chí dào",
+          "to be late",
+          "我们快走吧，别迟到。",
+          "Let’s go quickly so we are not late."
+        ],
+        [
+          "车厢",
+          "chē xiāng",
+          "train carriage; car",
+          "我的座位在五号车厢。",
+          "My seat is in carriage five."
+        ],
+        [
+          "座位",
+          "zuò wèi",
+          "seat",
+          "请问，我的座位在哪里？",
+          "Excuse me, where is my seat?"
+        ],
+        [
+          "候车室",
+          "hòu chē shì",
+          "waiting room",
+          "我们在候车室等车。",
+          "We are waiting for the train in the waiting room."
+        ]
+      ],
+      "tip": "先听拼音并跟读，再遮住英文自己回忆词义。最后试着替换例句中的一个词。",
+      "exercise": {
+        "q": "“suitcase”对应哪个词？",
+        "options": [
+          "行李箱",
+          "迟到",
+          "车厢"
+        ],
+        "answer": 0,
+        "why": "“行李箱”读作 xíng li xiāng，意思是 suitcase."
+      }
+    },
+    {
+      "slug": "seasons-and-weather",
+      "type": "vocabulary",
+      "level": "Starter · Unit 43",
+      "title": "认识四季与天气",
+      "subtitle": "Talk about seasons and seasonal weather.",
+      "goal": "认识春夏秋冬，并用一个常见动词说天气。",
+      "duration": "10 分钟",
+      "tags": [
+        "实用词汇",
+        "中英对照"
+      ],
+      "intro": "认识春夏秋冬，并用一个常见动词说天气。 每个词都配有拼音和生活化例句。",
+      "words": [
+        [
+          "春天",
+          "chūn tiān",
+          "spring",
+          "春天很暖和。",
+          "Spring is warm."
+        ],
+        [
+          "夏天",
+          "xià tiān",
+          "summer",
+          "夏天我喜欢喝茶。",
+          "In summer, I like drinking tea."
+        ],
+        [
+          "秋天",
+          "qiū tiān",
+          "autumn; fall",
+          "秋天的天气很好。",
+          "The weather is nice in autumn."
+        ],
+        [
+          "冬天",
+          "dōng tiān",
+          "winter",
+          "冬天这里很冷。",
+          "It is very cold here in winter."
+        ],
+        [
+          "刮风",
+          "guā fēng",
+          "to be windy",
+          "今天刮风，别忘了关窗。",
+          "It is windy today; remember to close the window."
+        ]
+      ],
+      "tip": "先听拼音并跟读，再遮住英文自己回忆词义。最后试着替换例句中的一个词。",
+      "exercise": {
+        "q": "“spring”对应哪个词？",
+        "options": [
+          "春天",
+          "夏天",
+          "秋天"
+        ],
+        "answer": 0,
+        "why": "“春天”读作 chūn tiān，意思是 spring."
+      }
+    },
+    {
+      "slug": "home-and-rent",
+      "type": "vocabulary",
+      "level": "Starter · Unit 44",
+      "title": "租房与家中设施",
+      "subtitle": "Talk about a home and basic rental details.",
+      "goal": "认识住处、房租和家中常见设施。",
+      "duration": "10 分钟",
+      "tags": [
+        "实用词汇",
+        "中英对照"
+      ],
+      "intro": "认识住处、房租和家中常见设施。 每个词都配有拼音和生活化例句。",
+      "words": [
+        [
+          "公寓",
+          "gōng yù",
+          "apartment",
+          "我住在一个小公寓里。",
+          "I live in a small apartment."
+        ],
+        [
+          "房租",
+          "fáng zū",
+          "rent",
+          "这个房间的房租多少钱？",
+          "How much is the rent for this room?"
+        ],
+        [
+          "钥匙",
+          "yào shi",
+          "key",
+          "我的钥匙在桌子上。",
+          "My key is on the table."
+        ],
+        [
+          "阳台",
+          "yáng tái",
+          "balcony",
+          "阳台上有一把椅子。",
+          "There is a chair on the balcony."
+        ],
+        [
+          "厨房",
+          "chú fáng",
+          "kitchen",
+          "厨房在房间旁边。",
+          "The kitchen is next to the room."
+        ]
+      ],
+      "tip": "先听拼音并跟读，再遮住英文自己回忆词义。最后试着替换例句中的一个词。",
+      "exercise": {
+        "q": "“apartment”对应哪个词？",
+        "options": [
+          "公寓",
+          "房租",
+          "钥匙"
+        ],
+        "answer": 0,
+        "why": "“公寓”读作 gōng yù，意思是 apartment."
+      }
+    },
+    {
+      "slug": "study-tools",
+      "type": "vocabulary",
+      "level": "Starter · Unit 45",
+      "title": "课堂学习用品",
+      "subtitle": "Name common tools and actions for studying.",
+      "goal": "在课堂和自习时认识常见的学习用品与动作。",
+      "duration": "10 分钟",
+      "tags": [
+        "实用词汇",
+        "中英对照"
+      ],
+      "intro": "在课堂和自习时认识常见的学习用品与动作。 每个词都配有拼音和生活化例句。",
+      "words": [
+        [
+          "词典",
+          "cí diǎn",
+          "dictionary",
+          "这个词我不认识，我查一下词典。",
+          "I do not know this word; I will look it up in the dictionary."
+        ],
+        [
+          "课本",
+          "kè běn",
+          "textbook",
+          "请把课本打开。",
+          "Please open the textbook."
+        ],
+        [
+          "黑板",
+          "hēi bǎn",
+          "blackboard",
+          "老师把新词写在黑板上。",
+          "The teacher writes the new words on the blackboard."
+        ],
+        [
+          "句子",
+          "jù zi",
+          "sentence",
+          "请用这个词说一个句子。",
+          "Please use this word to make a sentence."
+        ],
+        [
+          "复习",
+          "fù xí",
+          "to review",
+          "我晚上复习今天的课。",
+          "I review today’s lesson in the evening."
+        ]
+      ],
+      "tip": "先听拼音并跟读，再遮住英文自己回忆词义。最后试着替换例句中的一个词。",
+      "exercise": {
+        "q": "“dictionary”对应哪个词？",
+        "options": [
+          "词典",
+          "课本",
+          "黑板"
+        ],
+        "answer": 0,
+        "why": "“词典”读作 cí diǎn，意思是 dictionary."
+      }
+    },
+    {
+      "slug": "weekend-plans",
+      "type": "vocabulary",
+      "level": "Starter · Unit 46",
+      "title": "约朋友一起活动",
+      "subtitle": "Make a simple plan with a friend.",
+      "goal": "询问朋友有没有时间，并商量见面和散步。",
+      "duration": "10 分钟",
+      "tags": [
+        "实用词汇",
+        "中英对照"
+      ],
+      "intro": "询问朋友有没有时间，并商量见面和散步。 每个词都配有拼音和生活化例句。",
+      "words": [
+        [
+          "有空",
+          "yǒu kòng",
+          "to be free; have time",
+          "你周末有空吗？",
+          "Are you free this weekend?"
+        ],
+        [
+          "聊天",
+          "liáo tiān",
+          "to chat",
+          "我喜欢和朋友聊天。",
+          "I like chatting with friends."
+        ],
+        [
+          "欢迎",
+          "huān yíng",
+          "to welcome",
+          "欢迎你来我家。",
+          "You are welcome to come to my home."
+        ],
+        [
+          "见面",
+          "jiàn miàn",
+          "to meet; see each other",
+          "我们星期六见面吧。",
+          "Let’s meet on Saturday."
+        ],
+        [
+          "散步",
+          "sàn bù",
+          "to take a walk",
+          "晚饭以后我们去散步。",
+          "Let’s take a walk after dinner."
+        ]
+      ],
+      "tip": "先听拼音并跟读，再遮住英文自己回忆词义。最后试着替换例句中的一个词。",
+      "exercise": {
+        "q": "“to be free; have time”对应哪个词？",
+        "options": [
+          "有空",
+          "聊天",
+          "欢迎"
+        ],
+        "answer": 0,
+        "why": "“有空”读作 yǒu kòng，意思是 to be free; have time."
+      }
+    },
+    {
+      "slug": "directions-extra",
+      "type": "vocabulary",
+      "level": "Starter · Unit 47",
+      "title": "说清楚地点和方向",
+      "subtitle": "Give a few more simple directions around town.",
+      "goal": "用东边、西边、对面和旁边说明地点。",
+      "duration": "10 分钟",
+      "tags": [
+        "实用词汇",
+        "中英对照"
+      ],
+      "intro": "用东边、西边、对面和旁边说明地点。 每个词都配有拼音和生活化例句。",
+      "words": [
+        [
+          "东边",
+          "dōng bian",
+          "east side",
+          "学校在公园的东边。",
+          "The school is on the east side of the park."
+        ],
+        [
+          "西边",
+          "xī bian",
+          "west side",
+          "地铁站在商店的西边。",
+          "The subway station is on the west side of the shop."
+        ],
+        [
+          "对面",
+          "duì miàn",
+          "opposite; across from",
+          "银行在饭店对面。",
+          "The bank is across from the restaurant."
+        ],
+        [
+          "旁边",
+          "páng biān",
+          "beside; next to",
+          "药店在车站旁边。",
+          "The pharmacy is next to the station."
+        ],
+        [
+          "经过",
+          "jīng guò",
+          "to pass; go past",
+          "去学校要经过一个公园。",
+          "You pass a park on the way to school."
+        ]
+      ],
+      "tip": "先听拼音并跟读，再遮住英文自己回忆词义。最后试着替换例句中的一个词。",
+      "exercise": {
+        "q": "“east side”对应哪个词？",
+        "options": [
+          "东边",
+          "西边",
+          "对面"
+        ],
+        "answer": 0,
+        "why": "“东边”读作 dōng bian，意思是 east side."
+      }
+    },
+    {
+      "slug": "payment-details",
+      "type": "vocabulary",
+      "level": "Starter · Unit 48",
+      "title": "付款时常见的词",
+      "subtitle": "Understand several common ways to pay and ask for proof of payment.",
+      "goal": "认识银行卡、扫码、零钱和发票等付款相关词汇。",
+      "duration": "10 分钟",
+      "tags": [
+        "实用词汇",
+        "中英对照"
+      ],
+      "intro": "认识银行卡、扫码、零钱和发票等付款相关词汇。 每个词都配有拼音和生活化例句。",
+      "words": [
+        [
+          "银行卡",
+          "yín háng kǎ",
+          "bank card",
+          "可以用银行卡付款吗？",
+          "Can I pay by bank card?"
+        ],
+        [
+          "扫码",
+          "sǎo mǎ",
+          "to scan a code",
+          "我可以扫码付款。",
+          "I can scan the code to pay."
+        ],
+        [
+          "发票",
+          "fā piào",
+          "invoice; fapiao",
+          "请问可以开发票吗？",
+          "Could I have a fapiao, please?"
+        ],
+        [
+          "零钱",
+          "líng qián",
+          "small change",
+          "我有零钱，可以付现金。",
+          "I have some change and can pay in cash."
+        ],
+        [
+          "二维码",
+          "èr wéi mǎ",
+          "QR code",
+          "请给我看一下二维码。",
+          "Please show me the QR code."
+        ]
+      ],
+      "tip": "先听拼音并跟读，再遮住英文自己回忆词义。最后试着替换例句中的一个词。",
+      "exercise": {
+        "q": "“bank card”对应哪个词？",
+        "options": [
+          "银行卡",
+          "扫码",
+          "发票"
+        ],
+        "answer": 0,
+        "why": "“银行卡”读作 yín háng kǎ，意思是 bank card."
+      }
+    },
+    {
+      "slug": "daily-schedule",
+      "type": "vocabulary",
+      "level": "Starter · Unit 49",
+      "title": "说说一天的安排",
+      "subtitle": "Describe a few everyday actions and routines.",
+      "goal": "用常见动词简单说明早晚的日常安排。",
+      "duration": "10 分钟",
+      "tags": [
+        "实用词汇",
+        "中英对照"
+      ],
+      "intro": "用常见动词简单说明早晚的日常安排。 每个词都配有拼音和生活化例句。",
+      "words": [
+        [
+          "起床",
+          "qǐ chuáng",
+          "to get up",
+          "我每天七点起床。",
+          "I get up at seven every day."
+        ],
+        [
+          "上班",
+          "shàng bān",
+          "to go to work",
+          "我坐地铁去上班。",
+          "I take the subway to work."
+        ],
+        [
+          "下班",
+          "xià bān",
+          "to finish work",
+          "我六点下班。",
+          "I finish work at six."
+        ],
+        [
+          "睡觉",
+          "shuì jiào",
+          "to sleep; go to bed",
+          "我晚上十一点睡觉。",
+          "I go to bed at eleven in the evening."
+        ],
+        [
+          "洗澡",
+          "xǐ zǎo",
+          "to take a shower",
+          "我回家以后先洗澡。",
+          "I take a shower first after I get home."
+        ]
+      ],
+      "tip": "先听拼音并跟读，再遮住英文自己回忆词义。最后试着替换例句中的一个词。",
+      "exercise": {
+        "q": "“to get up”对应哪个词？",
+        "options": [
+          "起床",
+          "上班",
+          "下班"
+        ],
+        "answer": 0,
+        "why": "“起床”读作 qǐ chuáng，意思是 to get up."
+      }
+    },
+    {
+      "slug": "feelings-and-needs",
+      "type": "vocabulary",
+      "level": "Starter · Unit 50",
+      "title": "表达简单感受与需要",
+      "subtitle": "Say how you feel and what you need.",
+      "goal": "用短句表达开心、累、饿、渴等常见感受。",
+      "duration": "10 分钟",
+      "tags": [
+        "实用词汇",
+        "中英对照"
+      ],
+      "intro": "用短句表达开心、累、饿、渴等常见感受。 每个词都配有拼音和生活化例句。",
+      "words": [
+        [
+          "开心",
+          "kāi xīn",
+          "happy; glad",
+          "认识你我很开心。",
+          "I am very happy to meet you."
+        ],
+        [
+          "累",
+          "lèi",
+          "tired",
+          "我今天有点儿累。",
+          "I am a little tired today."
+        ],
+        [
+          "饿",
+          "è",
+          "hungry",
+          "我饿了，想吃米饭。",
+          "I am hungry and would like to eat rice."
+        ],
+        [
+          "渴",
+          "kě",
+          "thirsty",
+          "我渴了，想喝水。",
+          "I am thirsty and would like some water."
+        ],
+        [
+          "方便",
+          "fāng biàn",
+          "convenient; suitable",
+          "现在打电话方便吗？",
+          "Is it convenient to call now?"
+        ]
+      ],
+      "tip": "先听拼音并跟读，再遮住英文自己回忆词义。最后试着替换例句中的一个词。",
+      "exercise": {
+        "q": "“happy; glad”对应哪个词？",
+        "options": [
+          "开心",
+          "累",
+          "饿"
+        ],
+        "answer": 0,
+        "why": "“开心”读作 kāi xīn，意思是 happy; glad."
+      }
+    },
+    {
+      "slug": "sequence-xian-zai",
+      "type": "grammar",
+      "level": "Starter · Grammar",
+      "title": "用“先……再……”安排顺序",
+      "subtitle": "Say what you do first and next.",
+      "goal": "用“先……再……”按顺序说明两件事。",
+      "duration": "8–10 分钟",
+      "tags": [
+        "基础语法",
+        "中英对照",
+        "词汇联动"
+      ],
+      "intro": "先做第一件事，再做第二件事。两个动作通常由同一个人完成。",
+      "pattern": "主语 + 先 + 动作一，再 + 动作二",
+      "patternEn": "Subject + 先 + action 1, 再 + action 2",
+      "examples": [
+        [
+          "我先买票，再去候车室。",
+          "I will buy a ticket first, then go to the waiting room."
+        ],
+        [
+          "我回家以后先洗澡，再吃饭。",
+          "I take a shower first after I get home, then eat."
+        ],
+        [
+          "请先看课本，再做练习。",
+          "Please read the textbook first, then do the exercise."
+        ]
+      ],
+      "tip": "“先”和“再”放在动作前面；第二个动作前的“再”表示接下来的步骤。",
+      "relatedWords": [
+        "候车室",
+        "课本",
+        "练习",
+        "洗澡"
+      ],
+      "relatedLessons": [
+        "train-station-words",
+        "daily-schedule",
+        "study-tools"
+      ],
+      "exercise": {
+        "q": "先做第一步再做什么？",
+        "options": [
+          "我先买票，再去候车室。",
+          "我买票先再候车室去。",
+          "先我买了票再我去候车室。"
+        ],
+        "answer": 0,
+        "why": "“先 + 动作一，再 + 动作二”清楚地表达先后顺序。"
+      }
+    },
+    {
+      "slug": "not-yet-hai-mei",
+      "type": "grammar",
+      "level": "Starter · Grammar",
+      "title": "用“还没”说尚未发生的事",
+      "subtitle": "Say that something has not happened yet.",
+      "goal": "用“还没 + 动词”表达事情到现在还没有发生。",
+      "duration": "8–10 分钟",
+      "tags": [
+        "基础语法",
+        "中英对照",
+        "词汇联动"
+      ],
+      "intro": "“还没”放在动词前，表示截至现在事情尚未发生；需要时句末可以加“呢”。",
+      "pattern": "主语 + 还没 + 动词 (+ 呢)",
+      "patternEn": "Subject + 还没 + verb (+ 呢)",
+      "examples": [
+        [
+          "火车还没到呢。",
+          "The train has not arrived yet."
+        ],
+        [
+          "我还没复习今天的课。",
+          "I have not reviewed today’s lesson yet."
+        ],
+        [
+          "我们还没见面。",
+          "We have not met yet."
+        ]
+      ],
+      "tip": "“还没”已经包含“not yet”的意思，不要再在同一个动词前加“不”。",
+      "relatedWords": [
+        "候车室",
+        "复习",
+        "见面",
+        "迟到"
+      ],
+      "relatedLessons": [
+        "train-station-words",
+        "study-tools",
+        "weekend-plans"
+      ],
+      "exercise": {
+        "q": "火车现在还没有到，应该怎么说？",
+        "options": [
+          "火车还没到。",
+          "火车不还到。",
+          "火车到还没。"
+        ],
+        "answer": 0,
+        "why": "“还没”放在动词前：还没到。"
+      }
+    },
+    {
+      "slug": "ongoing-zhengzai-ne",
+      "type": "grammar",
+      "level": "Starter · Grammar",
+      "title": "用“正在……呢”描述正在做的事",
+      "subtitle": "Describe an action in progress.",
+      "goal": "用“正在 + 动词 + 呢”强调动作此刻正在进行。",
+      "duration": "8–10 分钟",
+      "tags": [
+        "基础语法",
+        "中英对照",
+        "词汇联动"
+      ],
+      "intro": "“正在”放在动词前；句末的“呢”常用于强调动作还在继续。",
+      "pattern": "主语 + 正在 + 动词 (+ 宾语) + 呢",
+      "patternEn": "Subject + 正在 + verb (+ object) + 呢",
+      "examples": [
+        [
+          "我正在复习呢。",
+          "I am reviewing right now."
+        ],
+        [
+          "她正在厨房做饭呢。",
+          "She is cooking in the kitchen right now."
+        ],
+        [
+          "他们正在候车室等车呢。",
+          "They are waiting for the train in the waiting room."
+        ]
+      ],
+      "tip": "“正在”已经表示动作进行中，“呢”可以加在句末，也可以省略。",
+      "relatedWords": [
+        "复习",
+        "厨房",
+        "候车室",
+        "聊天"
+      ],
+      "relatedLessons": [
+        "study-tools",
+        "home-and-rent",
+        "train-station-words",
+        "weekend-plans"
+      ],
+      "exercise": {
+        "q": "“I am reviewing now.” 哪句正确？",
+        "options": [
+          "我正在复习呢。",
+          "我复习正在呢。",
+          "我正在呢复习。"
+        ],
+        "answer": 0,
+        "why": "“正在”放在动词前，“呢”放在句末。"
+      }
+    },
+    {
+      "slug": "simultaneous-yibian",
+      "type": "grammar",
+      "level": "Starter · Grammar",
+      "title": "用“一边……一边……”说同时进行的事",
+      "subtitle": "Talk about two actions happening together.",
+      "goal": "用“一边……一边……”连接同一时间进行的两个动作。",
+      "duration": "8–10 分钟",
+      "tags": [
+        "基础语法",
+        "中英对照",
+        "词汇联动"
+      ],
+      "intro": "这个结构常描述一个人同时做两件事，两个“一边”分别放在两个动作前。",
+      "pattern": "主语 + 一边 + 动作一，一边 + 动作二",
+      "patternEn": "Subject + 一边 + action 1, 一边 + action 2",
+      "examples": [
+        [
+          "我一边散步，一边聊天。",
+          "I chat while taking a walk."
+        ],
+        [
+          "她一边看课本，一边查词典。",
+          "She looks at the textbook while checking the dictionary."
+        ],
+        [
+          "我们一边走，一边说。",
+          "We walk and talk at the same time."
+        ]
+      ],
+      "tip": "两个动作通常由同一个主语完成。",
+      "relatedWords": [
+        "散步",
+        "聊天",
+        "课本",
+        "词典"
+      ],
+      "relatedLessons": [
+        "weekend-plans",
+        "study-tools"
+      ],
+      "exercise": {
+        "q": "“She checks the dictionary while reading.” 怎么说？",
+        "options": [
+          "她一边看课本，一边查词典。",
+          "她一边词典，一边看。",
+          "她看一边课本，查词典一边。"
+        ],
+        "answer": 0,
+        "why": "两个“一边”分别放在两个动作前。"
+      }
+    },
+    {
+      "slug": "timing-deshi-hou",
+      "type": "grammar",
+      "level": "Starter · Grammar",
+      "title": "用“……的时候”说时间",
+      "subtitle": "Say when something happens.",
+      "goal": "用“……的时候”把一个动作或时间和另一件事连接起来。",
+      "duration": "8–10 分钟",
+      "tags": [
+        "基础语法",
+        "中英对照",
+        "词汇联动"
+      ],
+      "intro": "时间或动作放在“的时候”前面，主要句子放在后面。",
+      "pattern": "时间/动作 + 的时候，主语 + 动作",
+      "patternEn": "When + time/action, subject + action",
+      "examples": [
+        [
+          "春天的时候，天气很暖和。",
+          "The weather is warm in spring."
+        ],
+        [
+          "刮风的时候，请关窗。",
+          "Please close the window when it is windy."
+        ],
+        [
+          "下班的时候，我给朋友打电话。",
+          "I call my friend when I finish work."
+        ]
+      ],
+      "tip": "“的时候”前面可以是时间，如“春天的时候”，也可以是动作，如“下班的时候”。",
+      "relatedWords": [
+        "春天",
+        "刮风",
+        "下班",
+        "方便"
+      ],
+      "relatedLessons": [
+        "seasons-and-weather",
+        "daily-schedule"
+      ],
+      "exercise": {
+        "q": "“When it is windy, close the window.” 哪句正确？",
+        "options": [
+          "刮风的时候，请关窗。",
+          "的时候刮风，请关窗。",
+          "刮风，请时候关窗。"
+        ],
+        "answer": 0,
+        "why": "时间或动作放在“的时候”前面。"
+      }
+    },
+    {
+      "slug": "superlative-zui",
+      "type": "grammar",
+      "level": "Starter · Grammar",
+      "title": "用“最”表达“最……”",
+      "subtitle": "Say that something is the most or -est.",
+      "goal": "用“最 + 形容词”表达一个范围内程度最高的特点。",
+      "duration": "8–10 分钟",
+      "tags": [
+        "基础语法",
+        "中英对照",
+        "词汇联动"
+      ],
+      "intro": "“最”放在形容词前，可以说季节、地点或事物中哪一个最冷、最好或最方便。",
+      "pattern": "主语 + 最 + 形容词",
+      "patternEn": "Subject + 最 + adjective",
+      "examples": [
+        [
+          "冬天最冷。",
+          "Winter is the coldest."
+        ],
+        [
+          "这个公寓最方便。",
+          "This apartment is the most convenient."
+        ],
+        [
+          "我最喜欢春天。",
+          "I like spring the most."
+        ]
+      ],
+      "tip": "比较范围需要从上下文中清楚地看出来；“最”放在形容词或“喜欢”前。",
+      "relatedWords": [
+        "冬天",
+        "公寓",
+        "方便",
+        "春天"
+      ],
+      "relatedLessons": [
+        "seasons-and-weather",
+        "home-and-rent"
+      ],
+      "exercise": {
+        "q": "“Winter is the coldest.” 哪句正确？",
+        "options": [
+          "冬天最冷。",
+          "冬天比最冷。",
+          "最冬天冷。"
+        ],
+        "answer": 0,
+        "why": "“最”放在形容词前，表示程度最高。"
+      }
+    },
+    {
+      "slug": "prohibition-bie",
+      "type": "grammar",
+      "level": "Starter · Grammar",
+      "title": "用“别”提醒或劝阻",
+      "subtitle": "Give a simple warning or reminder.",
+      "goal": "用“别 + 动词”提醒别人不要做某件事。",
+      "duration": "8–10 分钟",
+      "tags": [
+        "基础语法",
+        "中英对照",
+        "词汇联动"
+      ],
+      "intro": "“别”放在动词前，常用于口语提醒；加上“请”可以让语气更礼貌。",
+      "pattern": "(请) + 别 + 动词",
+      "patternEn": "(Please) + 别 + verb",
+      "examples": [
+        [
+          "请别迟到。",
+          "Please do not be late."
+        ],
+        [
+          "别忘了带钥匙。",
+          "Do not forget to bring the key."
+        ],
+        [
+          "现在刮风，别开窗。",
+          "It is windy now; do not open the window."
+        ]
+      ],
+      "tip": "“别”比直接说“不”更像提醒或劝阻；礼貌请求前可以加“请”。",
+      "relatedWords": [
+        "迟到",
+        "钥匙",
+        "刮风",
+        "公寓"
+      ],
+      "relatedLessons": [
+        "train-station-words",
+        "home-and-rent",
+        "seasons-and-weather"
+      ],
+      "exercise": {
+        "q": "你想礼貌地提醒朋友不要迟到，怎么说？",
+        "options": [
+          "请别迟到。",
+          "请不迟到吗？",
+          "别请迟到。"
+        ],
+        "answer": 0,
+        "why": "“请别 + 动词”是常见的礼貌提醒。"
+      }
+    },
+    {
+      "slug": "action-at-place",
+      "type": "grammar",
+      "level": "Starter · Grammar",
+      "title": "用“在 + 地点 + 动作”说活动地点",
+      "subtitle": "Say where an action takes place.",
+      "goal": "把“在 + 地点”放在动作前，说明动作发生在哪里。",
+      "duration": "8–10 分钟",
+      "tags": [
+        "基础语法",
+        "中英对照",
+        "词汇联动"
+      ],
+      "intro": "“我在学校”只说明位置；“我在学校学习”说明在学校做什么。",
+      "pattern": "主语 + 在 + 地点 + 动词",
+      "patternEn": "Subject + 在 + place + verb",
+      "examples": [
+        [
+          "我在图书馆复习。",
+          "I review in the library."
+        ],
+        [
+          "她在厨房做饭。",
+          "She cooks in the kitchen."
+        ],
+        [
+          "我们在公寓聊天。",
+          "We chat in the apartment."
+        ]
+      ],
+      "tip": "说地点后还要接动作时，使用“在 + 地点 + 动词”。",
+      "relatedWords": [
+        "复习",
+        "图书馆",
+        "厨房",
+        "公寓"
+      ],
+      "relatedLessons": [
+        "study-tools",
+        "home-and-rent",
+        "weekend-plans"
+      ],
+      "exercise": {
+        "q": "“I review in the library.” 怎么说？",
+        "options": [
+          "我在图书馆复习。",
+          "我复习在图书馆。",
+          "我在复习图书馆。"
+        ],
+        "answer": 0,
+        "why": "地点短语“在图书馆”放在动作“复习”前。"
+      }
+    },
+    {
+      "slug": "duration-verb",
+      "type": "grammar",
+      "level": "Starter · Grammar",
+      "title": "用时间长度说明动作持续多久",
+      "subtitle": "Say how long an action lasts.",
+      "goal": "用“动词 + 时间长度”说明动作持续的时间。",
+      "duration": "8–10 分钟",
+      "tags": [
+        "基础语法",
+        "中英对照",
+        "词汇联动"
+      ],
+      "intro": "表示停留、学习等持续动作时，时间长度通常放在动词后。",
+      "pattern": "主语 + 动词 + 时间长度",
+      "patternEn": "Subject + verb + duration",
+      "examples": [
+        [
+          "我在北京住三天。",
+          "I am staying in Beijing for three days."
+        ],
+        [
+          "她每天复习半个小时。",
+          "She reviews for half an hour every day."
+        ],
+        [
+          "我们在中国学习一个月。",
+          "We study in China for one month."
+        ]
+      ],
+      "tip": "“三天”“半个小时”“一个月”回答“多久”；放在动作后面。",
+      "relatedWords": [
+        "公寓",
+        "复习",
+        "课本",
+        "房租"
+      ],
+      "relatedLessons": [
+        "home-and-rent",
+        "study-tools",
+        "daily-schedule"
+      ],
+      "exercise": {
+        "q": "“I am staying in Beijing for three days.” 哪句正确？",
+        "options": [
+          "我在北京住三天。",
+          "我三天在北京住了。",
+          "我在三天北京住。"
+        ],
+        "answer": 0,
+        "why": "时间长度放在动词“住”后面。"
+      }
+    },
+    {
+      "slug": "choice-haishi-huozhe",
+      "type": "grammar",
+      "level": "Starter · Grammar",
+      "title": "用“还是”和“或者”表达选择",
+      "subtitle": "Offer or state simple choices.",
+      "goal": "区分疑问句里的“还是”和陈述句里的“或者”。",
+      "duration": "8–10 分钟",
+      "tags": [
+        "基础语法",
+        "中英对照",
+        "词汇联动"
+      ],
+      "intro": "在给对方选择的问句里常用“还是”；在陈述句里连接可选项常用“或者”。",
+      "pattern": "问句：A 还是 B？\n陈述句：A 或者 B",
+      "patternEn": "Question: A 还是 B?\nStatement: A 或者 B",
+      "examples": [
+        [
+          "你坐地铁还是出租车？",
+          "Will you take the subway or a taxi?"
+        ],
+        [
+          "我周末想散步或者在家休息。",
+          "I would like to take a walk or rest at home this weekend."
+        ],
+        [
+          "你想在家吃饭还是去餐馆？",
+          "Would you like to eat at home or go to a restaurant?"
+        ]
+      ],
+      "tip": "先判断这句话是在问对方选择，还是在陈述一个选择。",
+      "relatedWords": [
+        "散步",
+        "公寓",
+        "银行卡",
+        "候车室"
+      ],
+      "relatedLessons": [
+        "weekend-plans",
+        "home-and-rent",
+        "payment-details",
+        "train-station-words"
+      ],
+      "exercise": {
+        "q": "在问对方坐哪种交通工具时，应该用哪个词？",
+        "options": [
+          "还是",
+          "或者",
+          "因为"
+        ],
+        "answer": 0,
+        "why": "提问让对方二选一时，常用“还是”。"
       }
     }
   ]
