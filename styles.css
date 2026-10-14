@@ -24,6 +24,11 @@
 @media(max-width:800px){.game-select-grid{grid-template-columns:1fr 1fr}.game-options{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:540px){.game-select-grid{gap:8px}.game-select{padding:13px;min-height:135px}.game-select>b{font-size:14px}.game-stage{padding:13px}.active-game-head{flex-direction:column}.game-back{white-space:normal}.play-box{padding:15px}.game-choice{font-size:18px;min-height:59px}.memory-grid{gap:7px}.memory-card{height:78px;font-size:20px}.score-strip span{padding:7px 9px;font-size:10px}}
 
+/* Keep the home content inset and the compact mobile navigation readable. */
+.hero.wrap,.learn.wrap{padding-left:32px;padding-right:32px}
+@media(max-width:800px){.hero.wrap,.learn.wrap{padding-left:22px;padding-right:22px}}
+@media(max-width:540px){.topbar .brand small{display:none}.nav a{white-space:nowrap;flex-shrink:0}}
+
 /* Bilingual helper labels */
 .nav a{display:flex;align-items:center;gap:5px}.nav-en{font-size:10px;font-weight:500;color:#849087}.english-copy{display:block;margin-top:5px;color:#849087;font-size:.9em;line-height:1.65}.english-lead{margin:8px 0 12px;color:#64756a;font:italic 17px var(--serif)}.hero-note .english-copy{font-size:11px}.card-en{display:block;margin-top:4px;color:#849087;font-size:12px;font-weight:500}.quiz-q .card-en{font-size:13px}
 @media(max-width:540px){.nav{gap:7px}.nav a:not(.search-open):not([href="#home"]){display:flex;font-size:10px!important}.nav-en{display:none}.nav .search-open{display:none}.mobile-menu{display:inline-block}}
