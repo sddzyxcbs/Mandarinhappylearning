@@ -28,6 +28,8 @@
 .hero.wrap,.learn.wrap{padding-left:32px;padding-right:32px}
 @media(max-width:800px){.hero.wrap,.learn.wrap{padding-left:22px;padding-right:22px}}
 @media(max-width:540px){.topbar .brand small{display:none}.nav a{white-space:nowrap;flex-shrink:0}}
+@media(max-width:540px){.page-intro h1,.lesson-title h1{font-size:clamp(30px,9vw,36px)}.topbar .brand{gap:8px}.topbar .seal{width:32px;height:32px;font-size:19px}.nav{gap:4px}.nav a{min-width:24px;min-height:32px;padding:0 2px}.mobile-menu{min-width:32px;min-height:32px}}
+@media(max-width:380px){.roadmap-grid{grid-template-columns:1fr}}
 
 /* Bilingual helper labels */
 .nav a{display:flex;align-items:center;gap:5px}.nav-en{font-size:10px;font-weight:500;color:#849087}.english-copy{display:block;margin-top:5px;color:#849087;font-size:.9em;line-height:1.65}.english-lead{margin:8px 0 12px;color:#64756a;font:italic 17px var(--serif)}.hero-note .english-copy{font-size:11px}.card-en{display:block;margin-top:4px;color:#849087;font-size:12px;font-weight:500}.quiz-q .card-en{font-size:13px}
