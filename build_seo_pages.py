@@ -11,6 +11,28 @@ from xml.dom import minidom
 ROOT = Path(__file__).resolve().parent
 BASE = "https://mandarinhappylearning.top"
 DATA = json.loads((ROOT / "content.js").read_text(encoding="utf-8").removeprefix("window.CN_CONTENT="))
+SEO_META = {
+    "greetings": {
+        "title": "Mandarin Greetings: Hello, Thank You & Polite Phrases | 汉语慢慢学",
+        "description": "Learn essential Mandarin greetings, thank-you phrases, and polite requests with pinyin, examples, and a quick beginner exercise. Free lesson.",
+    },
+    "basic-word-order": {
+        "title": "Chinese Word Order for Beginners: Subject, Verb & Object",
+        "description": "Learn basic Mandarin sentence order with clear subject-verb-object examples, English translations, and a quick practice question.",
+    },
+    "measure-words": {
+        "title": "Chinese Measure Words: How to Use 个 and 杯",
+        "description": "Learn why Mandarin uses measure words and how to use 个 and 杯 with numbers and nouns. Includes examples and a quick exercise.",
+    },
+    "bu-and-mei": {
+        "title": "不 (Bù) vs. 没 (Méi): Negation in Mandarin",
+        "description": "Understand when to use 不 and 没 in Mandarin for general negation, not having something, and actions that have not happened.",
+    },
+    "shi-and-you": {
+        "title": "是 (Shì) vs. 有 (Yǒu): Be and Have in Chinese",
+        "description": "Learn when to use 是 for identity and category, and 有 for possession or existence, with practical Mandarin examples.",
+    },
+}
 
 
 def e(value: object) -> str:
@@ -21,7 +43,9 @@ def page_for(lesson: dict) -> str:
     slug = lesson["slug"]
     title = lesson["title"]
     kind = "汉语语法" if lesson["type"] == "grammar" else "汉语词汇"
-    description = f"{lesson.get('goal', '')} 学习{title}，附拼音、例句和练习。"[:155]
+    seo = SEO_META.get(slug, {})
+    meta_title = seo.get("title", f"{title} · {kind} · 汉语慢慢学")
+    description = seo.get("description", f"{lesson.get('goal', '')} 学习{title}，附拼音、例句和练习。"[:155])
     url = f"{BASE}/lessons/{slug}.html"
     tags = "".join(f'<span class="pill">{e(tag)}</span>' for tag in lesson.get("tags", []))
     body = [
@@ -55,10 +79,10 @@ def page_for(lesson: dict) -> str:
     breadcrumb_json = json.dumps(breadcrumb, ensure_ascii=False).replace("</", "<\\/")
     return f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(title)} · {kind} · 汉语慢慢学</title><meta name="description" content="{e(description)}">
+<title>{e(meta_title)}</title><meta name="description" content="{e(description)}">
 <link rel="canonical" href="{e(url)}"><meta name="robots" content="index,follow">
-<meta property="og:type" content="article"><meta property="og:site_name" content="汉语慢慢学"><meta property="og:title" content="{e(title)} · {kind} · 汉语慢慢学"><meta property="og:description" content="{e(description)}"><meta property="og:url" content="{e(url)}"><meta property="og:locale" content="zh_CN">
-<meta name="twitter:card" content="summary"><meta name="twitter:title" content="{e(title)} · {kind} · 汉语慢慢学"><meta name="twitter:description" content="{e(description)}">
+<meta property="og:type" content="article"><meta property="og:site_name" content="汉语慢慢学"><meta property="og:title" content="{e(meta_title)}"><meta property="og:description" content="{e(description)}"><meta property="og:url" content="{e(url)}"><meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="{e(meta_title)}"><meta name="twitter:description" content="{e(description)}">
 <script type="application/ld+json">{breadcrumb_json}</script><link rel="stylesheet" href="../styles.css?v=20261020"></head>
 <body><header class="wrap topbar"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><nav class="nav"><a href="../index.html">首页 <span class="nav-en">Home</span></a><a href="../vocabulary.html">词汇 <span class="nav-en">Vocabulary</span></a><a href="../grammar.html">语法 <span class="nav-en">Grammar</span></a><a href="../practice.html">互动练习 <span class="nav-en">Practice</span></a></nav></header>
 <main class="lesson-shell">{"".join(body)}</main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="../vocabulary.html">课程目录</a></div></div></footer>
