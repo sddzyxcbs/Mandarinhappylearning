@@ -11,6 +11,8 @@ import json
 import re
 from pathlib import Path
 from xml.dom import minidom
+
+from guides_content import FAQ_BY_SLUG, GUIDES
 from xml.etree.ElementTree import Element, SubElement, tostring
 
 ROOT = Path(__file__).resolve().parent
@@ -49,6 +51,10 @@ SEO_META = {
 LESSONS = DATA["lessons"]
 BY_SLUG = {lesson["slug"]: lesson for lesson in LESSONS}
 ORDER = {lesson["slug"]: i for i, lesson in enumerate(LESSONS)}
+GUIDE_BY_LESSON: dict[str, list[dict]] = {}
+for _guide in GUIDES:
+    for _slug in _guide["related"]:
+        GUIDE_BY_LESSON.setdefault(_slug, []).append(_guide)
 
 
 def e(value: object) -> str:
@@ -92,6 +98,101 @@ def parse_vocab_grammar_links() -> dict[str, list[str]]:
 STAGES = parse_stages()
 VOCAB_GRAMMAR_LINKS = parse_vocab_grammar_links()
 SLUG_STAGE = {slug: stage["id"] for stage in STAGES for slug in stage["slugs"]}
+
+# Grammar lessons grouped by teaching topic. Single source of truth: this list is
+# also emitted as grammar-groups.js, which site.js uses to render the same markup.
+GRAMMAR_GROUPS = [
+    {
+        "id": "word-order",
+        "title": "基础句型与语序",
+        "englishTitle": "Word order & core patterns",
+        "description": "先说谁、做什么、对谁做，汉语的句子骨架。",
+        "englishDescription": "Build the subject-verb-object frame and the patterns built on it.",
+        "slugs": ["basic-word-order", "shi-and-you", "possession-with-de", "with-gen-together", "grammar-067",
+                  "grammar-002", "grammar-003", "grammar-004", "grammar-048", "grammar-049"],
+    },
+    {
+        "id": "places",
+        "title": "地点、存在与方位",
+        "englishTitle": "Places & location",
+        "description": "用“在”“有”“离”“往”说位置、存在和方向。",
+        "englishDescription": "Say where things are, what exists, and which way to go.",
+        "slugs": ["location-with-zai", "action-at-place", "grammar-006", "grammar-001", "grammar-007",
+                  "grammar-008", "grammar-009", "grammar-005", "from-to-cong-dao"],
+    },
+    {
+        "id": "questions",
+        "title": "提问方式",
+        "englishTitle": "Asking questions",
+        "description": "“吗”“几”“多少”“还是”，把陈述变成问题。",
+        "englishDescription": "Turn statements into yes/no, quantity, and choice questions.",
+        "slugs": ["questions-with-ma", "question-words", "questions-ji-duoshao", "choice-haishi-huozhe", "grammar-042"],
+    },
+    {
+        "id": "negation-modals",
+        "title": "否定、能愿与请求",
+        "englishTitle": "Negation, ability & requests",
+        "description": "“不”“没”“别”，以及“会/能/可以”“应该”“必须”。",
+        "englishDescription": "Negate, express ability and permission, and make polite requests.",
+        "slugs": ["bu-and-mei", "prohibition-bie", "grammar-044", "not-yet-hai-mei", "ability-hui-neng-keyi",
+                  "want-and-like", "grammar-037", "grammar-038", "grammar-039", "grammar-040", "grammar-041",
+                  "grammar-043", "soft-requests-yixia", "grammar-024"],
+    },
+    {
+        "id": "time",
+        "title": "时间、顺序与频次",
+        "englishTitle": "Time, sequence & frequency",
+        "description": "时间词放哪儿，怎么排顺序，什么时候、多久一次。",
+        "englishDescription": "Place time words, order actions, and talk about how often things happen.",
+        "slugs": ["time-word-order", "sequence-xian-zai", "grammar-010", "timing-deshi-hou", "grammar-011",
+                  "grammar-012", "grammar-013", "grammar-014", "grammar-015", "grammar-016", "grammar-017",
+                  "grammar-018", "grammar-019", "grammar-020", "grammar-034"],
+    },
+    {
+        "id": "aspect",
+        "title": "体貌：了、过、正在",
+        "englishTitle": "Aspect: 了, 过, 正在",
+        "description": "动作完成了、经历过、还是正在进行。",
+        "englishDescription": "Mark completion, past experience, and actions in progress.",
+        "slugs": ["completed-action-le", "experience-guo", "progressive-zhengzai", "ongoing-zhengzai-ne",
+                  "simultaneous-yibian", "duration-verb"],
+    },
+    {
+        "id": "degree",
+        "title": "程度、描写与比较",
+        "englishTitle": "Degree, description & comparison",
+        "description": "“很”“太”“有点儿”“比”，把话说得更准确。",
+        "englishDescription": "Describe, intensify, soften, and compare with adjectives.",
+        "slugs": ["adjectives-with-hen", "superlative-zui", "grammar-021", "grammar-022", "grammar-023",
+                  "grammar-025", "grammar-026", "grammar-027", "grammar-036", "grammar-060", "grammar-035",
+                  "grammar-059", "grammar-046", "grammar-047", "grammar-052"],
+    },
+    {
+        "id": "structures",
+        "title": "补语与特殊句式",
+        "englishTitle": "Complements & special structures",
+        "description": "结果补语、趋向补语、把字句、被字句。",
+        "englishDescription": "Result and directional complements, 把 and 被 constructions.",
+        "slugs": ["grammar-053", "grammar-054", "grammar-055", "grammar-050", "grammar-051", "grammar-045"],
+    },
+    {
+        "id": "connectors",
+        "title": "连接词与复句",
+        "englishTitle": "Connectors & complex sentences",
+        "description": "因为、如果、虽然、不但，把两个句子连起来。",
+        "englishDescription": "Join ideas with reason, condition, concession, and addition.",
+        "slugs": ["grammar-028", "grammar-029", "grammar-030", "grammar-031", "grammar-032", "grammar-056",
+                  "grammar-057", "grammar-058", "also-and-all-ye-dou"],
+    },
+    {
+        "id": "measure",
+        "title": "数量与量词",
+        "englishTitle": "Measure words & quantity",
+        "description": "个、本、张、杯：数字和名词之间的那一个字。",
+        "englishDescription": "Use measure words and quantity words naturally.",
+        "slugs": ["measure-words", "classifiers-ben-zhang", "grammar-033"],
+    },
+]
 
 
 def stage_of(lesson: dict) -> str:
@@ -258,6 +359,18 @@ def page_for(lesson: dict) -> str:
             f'<div class="related-links"><b>相关课程 · Related lessons</b>{links}</div></section>'
         )
 
+    guides = GUIDE_BY_LESSON.get(lesson["slug"])
+    if guides:
+        links = "".join(
+            f'<a href="../guides/{e(g["slug"])}.html">{e(g["h1"])}　↗</a>' for g in guides[:3]
+        )
+        body.append(
+            '<section class="lesson-section"><h2>延伸阅读 · Go deeper</h2>'
+            '<p>这一课属于更大的主题，想弄清楚背后的规则可以看这篇指南。 '
+            'A longer guide that explains the pattern behind this lesson.</p>'
+            f'<div class="related-links"><b>学习指南 · Guides</b>{links}</div></section>'
+        )
+
     prev_lesson, next_lesson = neighbours(lesson)
     nav_left = (
         f'<a href="{e(prev_lesson["slug"])}.html">← 上一课 · {e(prev_lesson["title"])}</a>'
@@ -301,7 +414,7 @@ def page_for(lesson: dict) -> str:
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="../styles.css?v=20261023"></head>
 <body><header class="wrap topbar"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><nav class="nav"><a href="../index.html">首页 <span class="nav-en">Home</span></a><a href="../vocabulary.html">词汇 <span class="nav-en">Vocabulary</span></a><a href="../grammar.html">语法 <span class="nav-en">Grammar</span></a><a href="../practice.html">互动练习 <span class="nav-en">Practice</span></a></nav></header>
-<main class="lesson-shell">{"".join(body)}</main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="../vocabulary.html">课程目录</a><a href="../words.html">词汇总表</a></div></div></footer>
+<main class="lesson-shell">{"".join(body)}</main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="../vocabulary.html">课程目录</a><a href="../words.html">词汇总表</a><a href="../guides.html">学习指南</a></div></div></footer>
 <script>document.querySelectorAll('[data-say]').forEach(b=>b.addEventListener('click',()=>{{if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(b.dataset.say);u.lang='zh-CN';u.rate=.82;speechSynthesis.cancel();speechSynthesis.speak(u)}}));</script></body></html>'''
 
 
@@ -346,7 +459,38 @@ def vocabulary_catalog() -> str:
 
 
 def grammar_catalog() -> str:
-    return f'<div class="catalog-grid">{"".join(card(l) for l in GRAMMAR)}</div>'
+    sections = []
+    assigned: set[str] = set()
+    for group in GRAMMAR_GROUPS:
+        items = [BY_SLUG[slug] for slug in group["slugs"] if slug in BY_SLUG]
+        assigned.update(lesson["slug"] for lesson in items)
+        if items:
+            sections.append(stage_section(group, items))
+    extra = [lesson for lesson in GRAMMAR if lesson["slug"] not in assigned]
+    if extra:
+        sections.append(
+            '<section class="course-stage" id="stage-more"><div class="course-stage-head"><div>'
+            '<div class="section-kicker">更多语法 · More grammar</div><h2>还没有归类的课程</h2>'
+            '<div class="stage-english"><b>Ungrouped lessons</b><span>Patterns waiting to be filed.</span></div></div>'
+            f'<span>{len(extra)} 节 · {len(extra)} lessons</span></div>'
+            f'<div class="catalog-grid">{"".join(card(l) for l in extra)}</div></section>'
+        )
+    return "".join(sections)
+
+
+def grammar_groups_js() -> str:
+    payload = [
+        {
+            "id": group["id"],
+            "title": group["title"],
+            "englishTitle": group["englishTitle"],
+            "description": group["description"],
+            "englishDescription": group["englishDescription"],
+            "slugs": group["slugs"],
+        }
+        for group in GRAMMAR_GROUPS
+    ]
+    return "window.GRAMMAR_GROUPS=" + json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + ";"
 
 
 def inject_catalog(path: Path, markup: str) -> None:
@@ -437,6 +581,168 @@ def word_index_page() -> str:
 </main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="vocabulary.html">课程目录</a><a href="grammar.html">语法课程</a></div></div></footer></body></html>'''
 
 
+# ---------------------------------------------------------------- guides
+GUIDES_DIR = ROOT / "guides"
+GUIDE_CSS = """
+.guide-dek{font-size:15px;color:#6f7d73;line-height:1.8;margin:0 0 8px}
+.guide-intro{font-size:14px;line-height:1.9;color:#5f7167}
+.guide-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12px}
+.guide-table th{text-align:left;font-weight:600;color:#245d4b;border-bottom:1px solid var(--line);padding:9px 10px}
+.guide-table td{border-bottom:1px solid #edf0e9;padding:9px 10px;color:#6f7d73;line-height:1.7}
+.guide-table td:first-child{color:var(--ink);font-family:var(--serif);font-size:14px}
+.guide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:26px 0}
+.guide-card{display:block;border:1px solid var(--line);background:var(--white);padding:20px;text-decoration:none;color:var(--ink);transition:.2s}
+.guide-card:hover{transform:translateY(-3px);border-color:#a9bd9e}
+.guide-card h3{font:600 20px var(--serif);margin:0 0 7px}
+.guide-card p{font-size:12px;color:#77857b;line-height:1.7;margin:0}
+.guide-card small{display:block;margin-top:12px;font-size:10px;color:#d27b5b;letter-spacing:1px}
+.guide-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+@media(max-width:720px){.guide-grid{grid-template-columns:1fr}}
+"""
+
+
+def _guide_blocks(guide: dict) -> list[str]:
+    out = [f'<p class="guide-intro">{guide["intro"]}</p>']
+    for block in guide["sections"]:
+        out.append(f'<section class="lesson-section"><h2>{block["h2"]}</h2>')
+        for para in block.get("p", []):
+            out.append(f"<p>{para}</p>")
+        if block.get("list"):
+            out.append("<ul>" + "".join(f"<li>{item}</li>" for item in block["list"]) + "</ul>")
+        if block.get("examples"):
+            rows = "".join(
+                f'<li><b>{zh}</b><span>{py} — {en}</span></li>' for zh, py, en in block["examples"]
+            )
+            out.append(f'<ul class="example-list">{rows}</ul>')
+        if block.get("table"):
+            head = "".join(f"<th>{cell}</th>" for cell in block["table"]["head"])
+            body = "".join(
+                "<tr>" + "".join(f"<td>{cell}</td>" for cell in row) + "</tr>" for row in block["table"]["rows"]
+            )
+            out.append(f'<table class="guide-table"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>')
+        if block.get("note"):
+            out.append(f'<div class="tip">{block["note"]}</div>')
+        out.append("</section>")
+    return out
+
+
+def _guide_words(guide: dict) -> int:
+    text = guide["intro"] + " " + guide["dek"]
+    for question, answer in FAQ_BY_SLUG.get(guide["slug"], []):
+        text += " " + question + " " + answer
+    for block in guide["sections"]:
+        text += " " + " ".join(block.get("p", [])) + " " + " ".join(block.get("list", []))
+        text += " " + " ".join(" ".join(row) for row in block.get("table", {}).get("rows", []))
+        text += " " + " ".join(" ".join(ex) for ex in block.get("examples", []))
+    return len(text.split())
+
+
+def guide_page(guide: dict) -> str:
+    url = f"{BASE}/guides/{guide['slug']}.html"
+    minutes = max(4, round(_guide_words(guide) / 190))
+    related_links = "".join(
+        f'<a href="../lessons/{e(slug)}.html">{e(BY_SLUG[slug]["title"])}　↗</a>'
+        for slug in guide["related"]
+        if slug in BY_SLUG
+    )
+    body = _guide_blocks(guide)
+    faq = FAQ_BY_SLUG.get(guide["slug"], [])
+    if faq:
+        items = "".join(f"<h3>{question}</h3><p>{answer}</p>" for question, answer in faq)
+        body.append(f'<section class="lesson-section"><h2>常见问题 · FAQ</h2>{items}</section>')
+    body.append(
+        '<section class="lesson-section"><h2>学词汇 · Learn the words</h2>'
+        f'<p>{e(guide["next"])}</p>'
+        f'<div class="related-links"><b>配套课程 · Lessons to practise with</b>{related_links}</div>'
+        '<div class="guide-cta"><a class="catalog-card" style="padding:14px 18px" href="../guides.html">'
+        '<b style="font:600 15px var(--serif)">全部学习指南</b><div style="font-size:11px;color:#77857b">All guides →</div></a></div></section>'
+    )
+    body.append(
+        '<nav class="lesson-nav"><a href="../guides.html">← 返回指南目录 · All guides</a>'
+        '<a href="../vocabulary.html">开始学词汇 · Vocabulary →</a></nav>'
+    )
+    breadcrumb = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "首页", "item": BASE + "/"},
+            {"@type": "ListItem", "position": 2, "name": "学习指南", "item": BASE + "/guides.html"},
+            {"@type": "ListItem", "position": 3, "name": guide["h1"], "item": url},
+        ],
+    }
+    article = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": guide["h1"],
+        "description": guide["description"],
+        "url": url,
+        "inLanguage": "en",
+        "about": [{"@type": "Thing", "name": keyword} for keyword in guide.get("keywords", [])],
+        "datePublished": BUILD_DATE,
+        "dateModified": BUILD_DATE,
+        "author": {"@type": "Organization", "name": SITE, "url": BASE + "/"},
+        "publisher": {"@type": "Organization", "name": SITE, "url": BASE + "/",
+                      "logo": {"@type": "ImageObject", "url": OG_IMAGE}},
+        "isPartOf": {"@type": "WebSite", "name": SITE, "url": BASE + "/"},
+    }
+    return f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+{head_block(title=guide["title"], description=guide["description"], url=url, page_type="article", schema=[breadcrumb, article])}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../styles.css?v=20261023"><style>{GUIDE_CSS}</style></head>
+<body><header class="wrap topbar"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><nav class="nav"><a href="../index.html">首页 <span class="nav-en">Home</span></a><a href="../vocabulary.html">词汇 <span class="nav-en">Vocabulary</span></a><a href="../grammar.html">语法 <span class="nav-en">Grammar</span></a><a href="../practice.html">互动练习 <span class="nav-en">Practice</span></a></nav></header>
+<main class="lesson-shell"><div class="crumb"><a href="../index.html">首页</a>　/　<a href="../guides.html">学习指南</a>　/　{e(guide["h1"])}</div>
+<div class="lesson-title"><div class="section-kicker">Guide · 学习指南 · {minutes} 分钟阅读</div><h1>{e(guide["h1"])}</h1>
+<div class="guide-dek">{e(guide["dek"])}</div></div>
+{"".join(body)}</main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="../vocabulary.html">课程目录</a><a href="../words.html">词汇总表</a><a href="../guides.html">学习指南</a></div></div></footer></body></html>'''
+
+
+def guides_index_page() -> str:
+    cards = "".join(
+        f'<a class="guide-card" href="guides/{e(guide["slug"])}.html"><h3>{e(guide["h1"])}</h3>'
+        f'<p>{e(guide["dek"])}</p><small>{max(4, round(_guide_words(guide) / 190))} 分钟 · GUIDE</small></a>'
+        for guide in GUIDES
+    )
+    title = "Chinese Learning Guides: Tones, Pinyin, Characters & More"
+    description = (
+        "In-depth beginner guides to Mandarin: tones, pinyin, characters, word order, measure words, "
+        "numbers and restaurant phrases — each linked to free practice lessons."
+    )
+    url = BASE + "/guides.html"
+    schema = [
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Chinese Learning Guides",
+            "url": url,
+            "inLanguage": "en",
+            "hasPart": [
+                {"@type": "Article", "name": guide["h1"], "url": f"{BASE}/guides/{guide['slug']}.html"}
+                for guide in GUIDES
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "首页", "item": BASE + "/"},
+                {"@type": "ListItem", "position": 2, "name": "学习指南", "item": url},
+            ],
+        },
+    ]
+    return f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+{head_block(title=title, description=description, url=url, page_type="website", schema=schema)}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css?v=20261023"><style>{GUIDE_CSS}</style></head>
+<body><header class="wrap topbar"><a class="brand" href="index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><nav class="nav"><a href="index.html">首页 <span class="nav-en">Home</span></a><a href="vocabulary.html">词汇 <span class="nav-en">Vocabulary</span></a><a href="grammar.html">语法 <span class="nav-en">Grammar</span></a><a href="practice.html">互动练习 <span class="nav-en">Practice</span></a></nav></header>
+<main class="wrap"><section class="page-intro"><div class="section-kicker">Guides · 学习指南</div><h1>把基础讲清楚的学习指南</h1>
+<div class="english-copy">Long-form guides to the parts that trip everyone up</div>
+<p>声调、拼音、汉字、语序、量词——每一篇都从零讲起，并用站内的词汇课和语法课做练习。 Each guide explains one topic properly, then points you at the lessons that practise it.</p></section>
+<div class="guide-grid">{cards}</div></main>
+<footer class="footer"><div class="wrap footer-inner"><a class="brand" href="index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="vocabulary.html">课程目录</a><a href="words.html">词汇总表</a><a href="grammar.html">语法</a></div></div></footer></body></html>'''
+
+
 # ---------------------------------------------------------------- static page heads
 def upgrade_page(path: Path, *, title: str, description: str, url: str, schema: list[dict] | None = None, page_type: str = "website") -> None:
     text = path.read_text(encoding="utf-8")
@@ -457,14 +763,39 @@ def upgrade_page(path: Path, *, title: str, description: str, url: str, schema: 
 
 
 def main() -> None:
+    grouped = [slug for group in GRAMMAR_GROUPS for slug in group["slugs"]]
+    grammar_slugs = {lesson["slug"] for lesson in GRAMMAR}
+    missing = grammar_slugs - set(grouped)
+    stale = set(grouped) - grammar_slugs
+    duplicated = [slug for slug in set(grouped) if grouped.count(slug) > 1]
+    assert not missing, f"grammar lessons missing from GRAMMAR_GROUPS: {sorted(missing)}"
+    assert not stale, f"GRAMMAR_GROUPS references unknown lessons: {sorted(stale)}"
+    assert not duplicated, f"lesson listed in two groups: {duplicated}"
+
     lesson_dir = ROOT / "lessons"
     lesson_dir.mkdir(exist_ok=True)
+    wanted = {lesson["slug"] for lesson in LESSONS}
+    for stale_file in lesson_dir.glob("*.html"):
+        if stale_file.stem not in wanted:
+            stale_file.unlink()
+            print(f"removed stale page {stale_file.name}")
     for lesson in LESSONS:
         (lesson_dir / f'{lesson["slug"]}.html').write_text(page_for(lesson), encoding="utf-8")
 
     inject_catalog(ROOT / "vocabulary.html", vocabulary_catalog())
     inject_catalog(ROOT / "grammar.html", grammar_catalog())
+    (ROOT / "grammar-groups.js").write_text(grammar_groups_js(), encoding="utf-8")
     (ROOT / "words.html").write_text(word_index_page(), encoding="utf-8")
+
+    GUIDES_DIR.mkdir(exist_ok=True)
+    guide_slugs = {guide["slug"] for guide in GUIDES}
+    for stale_file in GUIDES_DIR.glob("*.html"):
+        if stale_file.stem not in guide_slugs:
+            stale_file.unlink()
+            print(f"removed stale guide {stale_file.name}")
+    for guide in GUIDES:
+        (GUIDES_DIR / f'{guide["slug"]}.html').write_text(guide_page(guide), encoding="utf-8")
+    (ROOT / "guides.html").write_text(guides_index_page(), encoding="utf-8")
 
     upgrade_page(
         ROOT / "index.html",
@@ -515,7 +846,8 @@ def main() -> None:
         url=BASE + "/practice.html",
     )
 
-    pages = ["/", "/vocabulary.html", "/grammar.html", "/practice.html", "/words.html"]
+    pages = ["/", "/vocabulary.html", "/grammar.html", "/practice.html", "/words.html", "/guides.html"]
+    pages.extend(f'/guides/{guide["slug"]}.html' for guide in GUIDES)
     pages.extend(f'/lessons/{lesson["slug"]}.html' for lesson in LESSONS)
     urlset = Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     for path in pages:
