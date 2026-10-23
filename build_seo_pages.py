@@ -201,11 +201,15 @@ def page_for(lesson: dict) -> str:
     hub = "grammar" if is_grammar else "vocabulary"
     seo = SEO_META.get(slug, {})
     meta_title = seo.get("title") or f"{title} · {kind_en} Lesson with Pinyin & Examples | {SITE}"
-    description = seo.get("description") or (
-        f"{lesson.get('subtitle', '')} Beginner {kind_en.lower()} lesson with pinyin, English meanings, "
-        "example sentences, and a quick practice question."
-    )
-    description = re.sub(r"\s+", " ", description).strip()[:158]
+    subtitle = re.sub(r"\s+", " ", lesson.get("subtitle", "")).strip()
+    tail = f" Chinese {kind_en.split()[-1].lower()} lesson with pinyin, English meanings, examples, and a quick check."
+    budget = 156 - len(tail)
+    if len(subtitle) > budget:
+        subtitle = subtitle[:budget].rsplit(" ", 1)[0].rstrip(",;:.")
+        if subtitle and subtitle[-1] not in ".!?":
+            subtitle += "."
+    description = seo.get("description") or (subtitle + tail)
+    description = re.sub(r"\s+", " ", description).strip()
     url = f"{BASE}/lessons/{slug}.html"
     tags = "".join(f'<span class="pill">{e(tag)}</span>' for tag in lesson.get("tags", []))
 
