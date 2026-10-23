@@ -18,6 +18,8 @@ from xml.etree.ElementTree import Element, SubElement, tostring
 ROOT = Path(__file__).resolve().parent
 BASE = "https://mandarinhappylearning.top"
 SITE = "汉语慢慢学"
+SITE_EN = "Hanyu Manman Xue"
+REPO_URL = "https://github.com/sddzyxcbs/Mandarinhappylearning"
 OG_IMAGE = f"{BASE}/assets/og-default.png"
 BUILD_DATE = datetime.date.today().isoformat()
 
@@ -414,7 +416,7 @@ def page_for(lesson: dict) -> str:
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="../styles.css?v=20261023"></head>
 <body><header class="wrap topbar"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><nav class="nav"><a href="../index.html">首页 <span class="nav-en">Home</span></a><a href="../vocabulary.html">词汇 <span class="nav-en">Vocabulary</span></a><a href="../grammar.html">语法 <span class="nav-en">Grammar</span></a><a href="../practice.html">互动练习 <span class="nav-en">Practice</span></a></nav></header>
-<main class="lesson-shell">{"".join(body)}</main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="../vocabulary.html">课程目录</a><a href="../words.html">词汇总表</a><a href="../guides.html">学习指南</a></div></div></footer>
+<main class="lesson-shell">{"".join(body)}</main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学 · Hanyu Manman Xue</p><div class="footer-links"><a href="../vocabulary.html">课程目录</a><a href="../words.html">词汇总表</a><a href="../guides.html">学习指南</a></div></div></footer>
 <script>document.querySelectorAll('[data-say]').forEach(b=>b.addEventListener('click',()=>{{if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(b.dataset.say);u.lang='zh-CN';u.rate=.82;speechSynthesis.cancel();speechSynthesis.speak(u)}}));</script></body></html>'''
 
 
@@ -578,7 +580,7 @@ def word_index_page() -> str:
 <main class="wrap"><section class="page-intro"><div class="section-kicker">Word index · 词汇总表</div><h1>全部词汇总表</h1><p>{len(words)} 个基础词条，按主题整理，含拼音、英文释义和例句。Full index of beginner Mandarin words with pinyin, meanings, and example sentences. <a href="vocabulary.html">按课程学习 →</a></p></section>
 <nav class="cat-jump">{nav_links}</nav>
 {"".join(blocks)}
-</main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="vocabulary.html">课程目录</a><a href="grammar.html">语法课程</a></div></div></footer></body></html>'''
+</main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学 · Hanyu Manman Xue</p><div class="footer-links"><a href="vocabulary.html">课程目录</a><a href="grammar.html">语法课程</a></div></div></footer></body></html>'''
 
 
 # ---------------------------------------------------------------- guides
@@ -700,7 +702,7 @@ def guide_page(guide: dict) -> str:
 <main class="lesson-shell"><div class="crumb"><a href="../index.html">首页</a>　/　<a href="../guides.html">学习指南</a>　/　{e(guide["h1"])}</div>
 <div class="lesson-title"><div class="section-kicker">Guide · 学习指南 · {minutes} 分钟阅读</div><h1>{e(guide["h1"])}</h1>
 <div class="guide-dek">{e(guide["dek"])}</div></div>
-{"".join(body)}</main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="../vocabulary.html">课程目录</a><a href="../words.html">词汇总表</a><a href="../guides.html">学习指南</a></div></div></footer></body></html>'''
+{"".join(body)}</main><footer class="footer"><div class="wrap footer-inner"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学 · Hanyu Manman Xue</p><div class="footer-links"><a href="../vocabulary.html">课程目录</a><a href="../words.html">词汇总表</a><a href="../guides.html">学习指南</a></div></div></footer></body></html>'''
 
 
 def guides_index_page() -> str:
@@ -749,7 +751,7 @@ def guides_index_page() -> str:
 <section style="margin:34px 0 60px"><div class="section-kicker">Tools · 工具</div>
 <a class="guide-card" href="tools/tone-trainer.html" style="margin-top:14px"><h3>声调训练器 · Tone Trainer</h3>
 <p>听四个声调、看音高曲线，然后用听辨测验给耳朵打分。听、看、练在同一页完成。</p><small>FREE TOOL · 无需注册</small></a></section></main>
-<footer class="footer"><div class="wrap footer-inner"><a class="brand" href="index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="vocabulary.html">课程目录</a><a href="words.html">词汇总表</a><a href="grammar.html">语法</a></div></div></footer></body></html>'''
+<footer class="footer"><div class="wrap footer-inner"><a class="brand" href="index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学 · Hanyu Manman Xue</p><div class="footer-links"><a href="vocabulary.html">课程目录</a><a href="words.html">词汇总表</a><a href="grammar.html">语法</a></div></div></footer></body></html>'''
 
 
 # ---------------------------------------------------------------- static page heads
@@ -820,7 +822,7 @@ def main() -> None:
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 "name": SITE,
-                "alternateName": "Mandarin Happy Learning",
+                "alternateName": [SITE_EN, "Hanyu Manmanxue"],
                 "url": BASE + "/",
                 "inLanguage": "zh-CN",
                 "description": "Free beginner Mandarin lessons with pinyin, examples, and interactive practice.",
@@ -829,8 +831,10 @@ def main() -> None:
                 "@context": "https://schema.org",
                 "@type": "EducationalOrganization",
                 "name": SITE,
+                "alternateName": SITE_EN,
                 "url": BASE + "/",
                 "logo": OG_IMAGE,
+                "sameAs": [REPO_URL],
             },
         ],
     )
