@@ -79,6 +79,11 @@ GUIDES = [
                 ],
             },
         ],
+        "tool": {
+            "label": "练一练 · Try it with audio",
+            "blurb": "Reading about tones only goes so far. The tone trainer plays the same syllable at four pitches, shows the contour, and scores your ear as you go.",
+            "url": "tools/tone-trainer.html",
+        },
         "related": ["greetings", "numbers-one-to-five", "chinese-classroom", "polite-requests"],
         "next": "Start with the words where a tone mistake is most expensive: greetings and numbers.",
     },

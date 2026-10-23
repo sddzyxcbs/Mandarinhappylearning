@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mandarin Tone Trainer: Hear the Four Tones and Test Your Ear</title>
+<meta name="description" content="Free Mandarin tone trainer. Play the four tones on real syllables, watch the pitch contours, and take a listening quiz that scores your ear as you go.">
+<link rel="canonical" href="https://mandarinhappylearning.top/tools/tone-trainer.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website"><meta property="og:site_name" content="汉语慢慢学">
+<meta property="og:title" content="Mandarin Tone Trainer: Hear the Four Tones and Test Your Ear">
+<meta property="og:description" content="Play the four tones on real syllables, watch the pitch contours, and take a listening quiz that scores your ear as you go.">
+<meta property="og:url" content="https://mandarinhappylearning.top/tools/tone-trainer.html"><meta property="og:locale" content="en">
+<meta property="og:image" content="https://mandarinhappylearning.top/assets/og-default.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mandarin Tone Trainer: Hear the Four Tones and Test Your Ear">
+<meta name="twitter:description" content="Play the four tones, watch the pitch contours, and take a listening quiz.">
+<meta name="twitter:image" content="https://mandarinhappylearning.top/assets/og-default.png">
+<meta name="theme-color" content="#245d4b">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Mandarin Tone Trainer","url":"https://mandarinhappylearning.top/tools/tone-trainer.html","applicationCategory":"EducationalApplication","operatingSystem":"Any browser","inLanguage":"en","isAccessibleForFree":true,"description":"Play the four Mandarin tones on real syllables, view pitch contours, and take a scored listening quiz.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"汉语慢慢学","url":"https://mandarinhappylearning.top/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mandarinhappylearning.top/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://mandarinhappylearning.top/guides.html"},{"@type":"ListItem","position":3,"name":"Tone trainer","item":"https://mandarinhappylearning.top/tools/tone-trainer.html"}]}</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../styles.css?v=20261023">
+<style>
+.tt-hero{padding:38px 0 8px}
+.tt-dek{font-size:14px;color:#6f7d73;line-height:1.8;max-width:640px}
+.tt-panel{border:1px solid var(--line);background:var(--white);padding:22px;margin:22px 0}
+.tt-label{font-size:10px;letter-spacing:1.4px;color:#d27b5b;text-transform:uppercase;margin-bottom:12px}
+.tt-sets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tt-set{border:1px solid var(--line);background:var(--white);color:var(--ink);padding:8px 14px;font-size:12px;border-radius:99px;cursor:pointer;transition:.18s}
+.tt-set:hover{border-color:#a9bd9e}
+.tt-set[aria-pressed="true"]{background:var(--green);color:#f4f1e8;border-color:var(--green)}
+.tt-tones{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tt-tone{border:1px solid var(--line);background:#f7f8f3;padding:16px 12px;text-align:center;cursor:pointer;transition:.18s}
+.tt-tone:hover{transform:translateY(-2px);border-color:#a9bd9e}
+.tt-tone .char{font:500 40px var(--serif);display:block;line-height:1.1}
+.tt-tone .py{display:block;color:#d27b5b;font-size:13px;margin-top:6px}
+.tt-tone .num{display:block;font-size:10px;color:#8b978e;margin-top:8px;letter-spacing:.6px}
+.tt-stage{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:20px;align-items:start}
+.tt-chart{background:#f7f8f3;border:1px solid var(--line);padding:12px}
+.tt-chart figcaption{font-size:10px;color:#8b978e;margin-top:8px;letter-spacing:.4px}
+.tt-chart svg{width:100%;height:auto;display:block}
+.tt-readout{border:1px solid var(--line);padding:16px;background:#f7f8f3;font-size:12px;color:#6f7d73;line-height:1.8}
+.tt-readout b{font:500 26px var(--serif);color:var(--ink);display:block;margin-bottom:4px}
+.tt-quiz-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.tt-score{font-size:11px;color:#7f8b81;letter-spacing:.4px}
+.tt-score b{color:var(--green);font-size:15px}
+.tt-prompt{font:500 18px var(--serif);margin:16px 0 4px;color:var(--ink)}
+.tt-options{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.tt-option{border:1px solid var(--line);background:var(--white);padding:14px 8px;cursor:pointer;font-size:13px;color:var(--ink);transition:.18s}
+.tt-option:hover{border-color:#a9bd9e}
+.tt-option small{display:block;font-size:10px;color:#8b978e;margin-top:5px}
+.tt-option.right{background:#dff0c9;border-color:#a9bd9e}
+.tt-option.nope{background:#f8d9ce;border-color:#d9a48d}
+.tt-feedback{min-height:44px;margin-top:14px;font-size:12px;color:#6f7d73;line-height:1.7}
+.tt-feedback .answer{font:500 17px var(--serif);color:var(--ink)}
+.tt-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tt-btn{border:1px solid var(--line);background:var(--white);padding:10px 16px;font-size:12px;cursor:pointer;color:var(--ink)}
+.tt-btn.primary{background:var(--green);color:#f4f1e8;border-color:var(--green)}
+.tt-btn:hover{border-color:#a9bd9e}
+.tt-hint{font-size:11px;color:#8b9186;margin-top:12px}
+.tt-notes{font-size:13px;color:#6f7d73;line-height:1.9}
+.tt-notes li{margin-bottom:6px}
+@media(max-width:760px){.tt-tones,.tt-options{grid-template-columns:repeat(2,1fr)}.tt-stage{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="wrap topbar"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><nav class="nav"><a href="../index.html">首页 <span class="nav-en">Home</span></a><a href="../vocabulary.html">词汇 <span class="nav-en">Vocabulary</span></a><a href="../grammar.html">语法 <span class="nav-en">Grammar</span></a><a href="../practice.html">互动练习 <span class="nav-en">Practice</span></a></nav></header>
+
+<main class="lesson-shell">
+  <div class="crumb"><a href="../index.html">首页</a>　/　<a href="../guides.html">学习指南</a>　/　声调训练器</div>
+
+  <div class="tt-hero">
+    <div class="section-kicker">Tool · 工具 · Free</div>
+    <h1 style="font-size:44px;margin:12px 0 10px">声调训练器 <span style="font-size:18px;color:#8b978e;font-family:var(--sans)">Tone Trainer</span></h1>
+    <p class="tt-dek">Hear the same syllable at four pitches, watch what your voice has to do, then test whether you can hear the difference. No account, no app — just your ears and ten minutes.</p>
+  </div>
+
+  <section class="tt-panel" aria-label="Tone player">
+    <div class="tt-label">1 · Listen to the four tones</div>
+    <div class="tt-sets" id="ttSets" role="group" aria-label="Choose a syllable"></div>
+    <div class="tt-tones" id="ttTones"></div>
+    <div class="tt-stage">
+      <figure class="tt-chart">
+        <svg id="ttChart" viewBox="0 0 340 170" role="img" aria-label="Pitch contours of the four Mandarin tones">
+          <line x1="8" y1="20" x2="332" y2="20" stroke="#e6ebe2" stroke-width="1"/>
+          <line x1="8" y1="76" x2="332" y2="76" stroke="#e6ebe2" stroke-width="1"/>
+          <line x1="8" y1="104" x2="332" y2="104" stroke="#e6ebe2" stroke-width="1"/>
+          <line x1="8" y1="132" x2="332" y2="132" stroke="#e6ebe2" stroke-width="1"/>
+          <text x="8" y="14" font-size="9" fill="#9aa49a">5 high</text>
+          <text x="8" y="150" font-size="9" fill="#9aa49a">1 low</text>
+          <polyline data-tone="1" points="26,20 320,20" fill="none" stroke="#245d4b" stroke-width="3" stroke-linecap="round"/>
+          <polyline data-tone="2" points="26,76 320,20" fill="none" stroke="#4d7c5f" stroke-width="3" stroke-linecap="round"/>
+          <polyline data-tone="3" points="26,104 150,132 320,48" fill="none" stroke="#7d9b6e" stroke-width="3" stroke-linecap="round"/>
+          <polyline data-tone="4" points="26,20 320,132" fill="none" stroke="#d27b5b" stroke-width="3" stroke-linecap="round"/>
+          <text x="326" y="24" font-size="9" fill="#245d4b" text-anchor="end">1</text>
+          <text x="326" y="16" font-size="9" fill="#4d7c5f" text-anchor="end">2</text>
+          <text x="326" y="46" font-size="9" fill="#7d9b6e" text-anchor="end">3</text>
+          <text x="326" y="146" font-size="9" fill="#d27b5b" text-anchor="end">4</text>
+        </svg>
+        <figcaption>Chao pitch scale: 5 is the top of your range, 1 the bottom.</figcaption>
+      </figure>
+      <div class="tt-readout" id="ttReadout"><b>mā</b>mother · 1st tone<br>高而平，像医生说“啊——”时那样保持住。</div>
+    </div>
+    <p class="tt-hint">Audio uses your device's Chinese text-to-speech voice. If you hear nothing, check that a Chinese voice is installed (macOS: System Settings → Accessibility → Spoken Content).</p>
+  </section>
+
+  <section class="tt-panel" aria-label="Listening quiz">
+    <div class="tt-quiz-head">
+      <div class="tt-label" style="margin:0">2 · Test your ear</div>
+      <div class="tt-score">Score <b id="ttScore">0</b> / <span id="ttTotal">0</span>　·　Streak <b id="ttStreak">0</b>　·　Best <span id="ttBest">0</span></div>
+    </div>
+    <p class="tt-prompt">Which tone did you hear?</p>
+    <div class="tt-options" id="ttOptions"></div>
+    <div class="tt-feedback" id="ttFeedback">Press play, listen, then choose 1–4 (keyboard works too).</div>
+    <div class="tt-controls">
+      <button class="tt-btn primary" id="ttPlay">▶ Play again</button>
+      <button class="tt-btn" id="ttNext">Next syllable →</button>
+      <button class="tt-btn" id="ttReset">Reset score</button>
+    </div>
+  </section>
+
+  <section class="lesson-section">
+    <h2>How to use it</h2>
+    <ul class="tt-notes">
+      <li><b>Listen before you look.</b> The character is hidden until you answer — guessing from the shape is not the skill you are training.</li>
+      <li><b>Ten minutes, then stop.</b> Ear training degrades with fatigue; short daily sessions beat one long one.</li>
+      <li><b>Say it back.</b> After each answer, repeat the syllable aloud. Recognition and production reinforce each other.</li>
+      <li><b>Watch the contour, not the number.</b> The chart is what your voice actually does; the label 1–4 is just a name for it.</li>
+    </ul>
+  </section>
+
+  <section class="lesson-section">
+    <h2>为什么第三声听起来不像第三声</h2>
+    <p style="font-size:13px;line-height:1.9;color:#6f7d73">Alone, the third tone dips low and rises. In speech, two third tones in a row turn the first one into a second tone: <b>你好</b> is written <i>nǐ hǎo</i> but said <i>ní hǎo</i>. This trainer plays single syllables on purpose — once you can hear the four in isolation, connected speech stops sounding like noise.</p>
+    <div class="related-links"><b>继续学 · Keep going</b><a href="../guides/chinese-tones.html">声调完全指南 · Chinese tones guide　↗</a><a href="../guides/chinese-pinyin-guide.html">拼音指南 · Pinyin guide　↗</a><a href="../lessons/greetings.html">打招呼 · Greetings lesson　↗</a></div>
+  </section>
+
+  <nav class="lesson-nav"><a href="../guides.html">← 返回指南目录 · All guides</a><a href="../practice.html">去互动练习 · Practice →</a></nav>
+</main>
+
+<footer class="footer"><div class="wrap footer-inner"><a class="brand" href="../index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="../vocabulary.html">课程目录</a><a href="../words.html">词汇总表</a><a href="../guides.html">学习指南</a></div></div></footer>
+
+<script>
+(function () {
+  var SETS = [
+    { key: 'ma', tones: [
+      { char: '妈', py: 'mā', tone: 1, en: 'mother' },
+      { char: '麻', py: 'má', tone: 2, en: 'hemp' },
+      { char: '马', py: 'mǎ', tone: 3, en: 'horse' },
+      { char: '骂', py: 'mà', tone: 4, en: 'to scold' }
+    ]},
+    { key: 'ba', tones: [
+      { char: '八', py: 'bā', tone: 1, en: 'eight' },
+      { char: '拔', py: 'bá', tone: 2, en: 'to pull' },
+      { char: '把', py: 'bǎ', tone: 3, en: 'handle; to hold' },
+      { char: '爸', py: 'bà', tone: 4, en: 'dad' }
+    ]},
+    { key: 'da', tones: [
+      { char: '搭', py: 'dā', tone: 1, en: 'to put up' },
+      { char: '答', py: 'dá', tone: 2, en: 'to answer' },
+      { char: '打', py: 'dǎ', tone: 3, en: 'to hit' },
+      { char: '大', py: 'dà', tone: 4, en: 'big' }
+    ]},
+    { key: 'shi', tones: [
+      { char: '诗', py: 'shī', tone: 1, en: 'poem' },
+      { char: '十', py: 'shí', tone: 2, en: 'ten' },
+      { char: '使', py: 'shǐ', tone: 3, en: 'to use' },
+      { char: '是', py: 'shì', tone: 4, en: 'to be' }
+    ]},
+    { key: 'yi', tones: [
+      { char: '衣', py: 'yī', tone: 1, en: 'clothes' },
+      { char: '姨', py: 'yí', tone: 2, en: 'aunt' },
+      { char: '椅', py: 'yǐ', tone: 3, en: 'chair' },
+      { char: '意', py: 'yì', tone: 4, en: 'meaning' }
+    ]},
+    { key: 'wu', tones: [
+      { char: '屋', py: 'wū', tone: 1, en: 'house' },
+      { char: '无', py: 'wú', tone: 2, en: 'none' },
+      { char: '五', py: 'wǔ', tone: 3, en: 'five' },
+      { char: '雾', py: 'wù', tone: 4, en: 'fog' }
+    ]}
+  ];
+
+  var TONE_HINT = {
+    1: '高而平 · high and level — hold it steady at the top of your range.',
+    2: '上升 · rising — like the “huh?” you say when you did not hear.',
+    3: '先降后升 · low, then rising — the dip is the important part.',
+    4: '下降 · sharp fall — like a firm “no”.'
+  };
+
+  var setsEl = document.getElementById('ttSets');
+  var tonesEl = document.getElementById('ttTones');
+  var chartEl = document.getElementById('ttChart');
+  var readoutEl = document.getElementById('ttReadout');
+  var scoreEl = document.getElementById('ttScore');
+  var totalEl = document.getElementById('ttTotal');
+  var streakEl = document.getElementById('ttStreak');
+  var bestEl = document.getElementById('ttBest');
+  var optionsEl = document.getElementById('ttOptions');
+  var feedbackEl = document.getElementById('ttFeedback');
+
+  var activeSet = SETS[0];
+  var voice = null;
+  var quiz = { current: null, answered: false, score: 0, total: 0, streak: 0, best: 0 };
+
+  try { quiz.best = parseInt(localStorage.getItem('ttBest') || '0', 10) || 0; } catch (e) { quiz.best = 0; }
+  bestEl.textContent = quiz.best;
+
+  function pickVoice() {
+    if (!('speechSynthesis' in window)) return null;
+    var voices = window.speechSynthesis.getVoices() || [];
+    var zh = voices.filter(function (v) { return /^(zh|cmn)/i.test(v.lang) || /Chinese|Mandarin|Tingting|Meijia|Sinji/i.test(v.name); });
+    return zh[0] || null;
+  }
+  voice = pickVoice();
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = function () { voice = pickVoice(); };
+  }
+
+  function speak(text, rate) {
+    if (!('speechSynthesis' in window)) {
+      feedbackEl.textContent = 'This browser has no speech synthesis. Try Chrome, Edge or Safari.';
+      return;
+    }
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    u.rate = rate || 0.8;
+    u.pitch = 1;
+    if (voice) u.voice = voice;
+    window.speechSynthesis.speak(u);
+  }
+
+  function highlight(tone) {
+    var lines = chartEl.querySelectorAll('polyline');
+    for (var i = 0; i < lines.length; i++) {
+      var isActive = Number(lines[i].getAttribute('data-tone')) === tone;
+      lines[i].setAttribute('stroke-width', isActive ? 6 : 2);
+      lines[i].setAttribute('opacity', isActive ? 1 : 0.28);
+    }
+  }
+
+  function renderSetTabs() {
+    setsEl.innerHTML = '';
+    SETS.forEach(function (set) {
+      var b = document.createElement('button');
+      b.className = 'tt-set';
+      b.type = 'button';
+      b.textContent = set.tones.map(function (t) { return t.char; }).join(' ');
+      b.setAttribute('aria-label', 'Syllable ' + set.key);
+      b.setAttribute('aria-pressed', set === activeSet ? 'true' : 'false');
+      b.addEventListener('click', function () {
+        activeSet = set;
+        renderSetTabs();
+        renderTones();
+      });
+      setsEl.appendChild(b);
+    });
+  }
+
+  function renderTones() {
+    tonesEl.innerHTML = '';
+    activeSet.tones.forEach(function (t) {
+      var b = document.createElement('button');
+      b.className = 'tt-tone';
+      b.type = 'button';
+      b.innerHTML = '<span class="char">' + t.char + '</span><span class="py">' + t.py + '</span><span class="num">TONE ' + t.tone + '</span>';
+      b.setAttribute('aria-label', t.py + ', ' + t.en + ', tone ' + t.tone);
+      b.addEventListener('click', function () {
+        speak(t.char);
+        highlight(t.tone);
+        readoutEl.innerHTML = '<b>' + t.py + '</b>' + t.en + ' · ' + t.tone + (t.tone === 1 ? 'st' : t.tone === 2 ? 'nd' : t.tone === 3 ? 'rd' : 'th') + ' tone<br>' + TONE_HINT[t.tone];
+      });
+      tonesEl.appendChild(b);
+    });
+    highlight(1);
+  }
+
+  function ordinal(n) { return n + (n === 1 ? 'st' : n === 2 ? 'nd' : n === 3 ? 'rd' : 'th'); }
+
+  function newQuestion(silent) {
+    var set = SETS[Math.floor(Math.random() * SETS.length)];
+    var target = set.tones[Math.floor(Math.random() * 4)];
+    quiz.current = { set: set, target: target };
+    quiz.answered = false;
+    feedbackEl.innerHTML = 'Listening… press replay if you missed it.';
+    optionsEl.innerHTML = '';
+    [1, 2, 3, 4].forEach(function (n) {
+      var b = document.createElement('button');
+      b.className = 'tt-option';
+      b.type = 'button';
+      b.dataset.tone = n;
+      b.innerHTML = ordinal(n) + ' tone<small>' + ({ 1: 'high, level', 2: 'rising', 3: 'dip then rise', 4: 'falling' }[n]) + '</small>';
+      b.addEventListener('click', function () { answer(n, b); });
+      optionsEl.appendChild(b);
+    });
+    if (!silent) speak(target.char, 0.72);
+    highlight(0);
+  }
+
+  function answer(picked, btn) {
+    if (!quiz.current || quiz.answered) return;
+    quiz.answered = true;
+    var target = quiz.current.target;
+    var correct = picked === target.tone;
+    quiz.total += 1;
+    if (correct) {
+      quiz.score += 1;
+      quiz.streak += 1;
+      if (quiz.streak > quiz.best) {
+        quiz.best = quiz.streak;
+        try { localStorage.setItem('ttBest', String(quiz.best)); } catch (e) {}
+        bestEl.textContent = quiz.best;
+      }
+      btn.classList.add('right');
+      feedbackEl.innerHTML = '<span class="answer">' + target.char + ' ' + target.py + '</span> — ' + target.en + ', ' + ordinal(target.tone) + ' tone. ' + TONE_HINT[target.tone];
+    } else {
+      quiz.streak = 0;
+      btn.classList.add('nope');
+      var right = optionsEl.querySelector('[data-tone="' + target.tone + '"]');
+      if (right) right.classList.add('right');
+      feedbackEl.innerHTML = '<span class="answer">' + target.char + ' ' + target.py + '</span> — you picked ' + ordinal(picked) + ', it was ' + ordinal(target.tone) + '. ' + TONE_HINT[target.tone];
+    }
+    highlight(target.tone);
+    speak(target.char, 0.72);
+    scoreEl.textContent = quiz.score;
+    totalEl.textContent = quiz.total;
+    streakEl.textContent = quiz.streak;
+  }
+
+  document.getElementById('ttPlay').addEventListener('click', function () {
+    if (quiz.current) speak(quiz.current.target.char, 0.72);
+  });
+  document.getElementById('ttNext').addEventListener('click', newQuestion);
+  document.getElementById('ttReset').addEventListener('click', function () {
+    quiz.score = 0; quiz.total = 0; quiz.streak = 0;
+    scoreEl.textContent = '0'; totalEl.textContent = '0'; streakEl.textContent = '0';
+    newQuestion();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if (/^[1-4]$/.test(e.key)) {
+      var btn = optionsEl.querySelector('[data-tone="' + e.key + '"]');
+      if (btn) answer(Number(e.key), btn);
+    }
+    if (e.key === ' ') { e.preventDefault(); if (quiz.current) speak(quiz.current.target.char, 0.72); }
+  });
+
+  renderSetTabs();
+  renderTones();
+  newQuestion(true);
+})();
+</script>
+</body>
+</html>

@@ -646,6 +646,12 @@ def guide_page(guide: dict) -> str:
         if slug in BY_SLUG
     )
     body = _guide_blocks(guide)
+    if guide.get("tool"):
+        tool = guide["tool"]
+        body.append(
+            f'<section class="lesson-section"><h2>{tool["label"]}</h2><p>{tool["blurb"]}</p>'
+            f'<div class="related-links"><a href="../{tool["url"]}">打开工具 · Open the tool　↗</a></div></section>'
+        )
     faq = FAQ_BY_SLUG.get(guide["slug"], [])
     if faq:
         items = "".join(f"<h3>{question}</h3><p>{answer}</p>" for question, answer in faq)
@@ -739,7 +745,10 @@ def guides_index_page() -> str:
 <main class="wrap"><section class="page-intro"><div class="section-kicker">Guides · 学习指南</div><h1>把基础讲清楚的学习指南</h1>
 <div class="english-copy">Long-form guides to the parts that trip everyone up</div>
 <p>声调、拼音、汉字、语序、量词——每一篇都从零讲起，并用站内的词汇课和语法课做练习。 Each guide explains one topic properly, then points you at the lessons that practise it.</p></section>
-<div class="guide-grid">{cards}</div></main>
+<div class="guide-grid">{cards}</div>
+<section style="margin:34px 0 60px"><div class="section-kicker">Tools · 工具</div>
+<a class="guide-card" href="tools/tone-trainer.html" style="margin-top:14px"><h3>声调训练器 · Tone Trainer</h3>
+<p>听四个声调、看音高曲线，然后用听辨测验给耳朵打分。听、看、练在同一页完成。</p><small>FREE TOOL · 无需注册</small></a></section></main>
 <footer class="footer"><div class="wrap footer-inner"><a class="brand" href="index.html"><span class="seal">汉</span><span>汉语慢慢学<small>CHINESE, ONE MOMENT AT A TIME</small></span></a><p>从一个词开始，慢慢认识一种语言。　© 2026 汉语慢慢学</p><div class="footer-links"><a href="vocabulary.html">课程目录</a><a href="words.html">词汇总表</a><a href="grammar.html">语法</a></div></div></footer></body></html>'''
 
 
@@ -846,7 +855,8 @@ def main() -> None:
         url=BASE + "/practice.html",
     )
 
-    pages = ["/", "/vocabulary.html", "/grammar.html", "/practice.html", "/words.html", "/guides.html"]
+    pages = ["/", "/vocabulary.html", "/grammar.html", "/practice.html", "/words.html", "/guides.html",
+             "/tools/tone-trainer.html"]
     pages.extend(f'/guides/{guide["slug"]}.html' for guide in GUIDES)
     pages.extend(f'/lessons/{lesson["slug"]}.html' for lesson in LESSONS)
     urlset = Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
