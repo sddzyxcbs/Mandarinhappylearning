@@ -773,6 +773,26 @@ def upgrade_page(path: Path, *, title: str, description: str, url: str, schema: 
     path.write_text(text, encoding="utf-8")
 
 
+
+def add_footer_links() -> None:
+    """Ensure every page links to About and Privacy exactly once."""
+    targets = [ROOT / name for name in ("index.html", "vocabulary.html", "grammar.html",
+                                        "practice.html", "words.html", "guides.html", "about.html", "privacy.html")]
+    targets += sorted((ROOT / "lessons").glob("*.html")) + sorted((ROOT / "guides").glob("*.html"))
+    for path in targets:
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        if 'about.html' in text:
+            continue
+        prefix = "../" if path.parent.name in ("lessons", "guides") else ""
+        extra = f'<a href="{prefix}about.html">关于</a><a href="{prefix}privacy.html">隐私</a>'
+        new_text = re.sub(r'(<div class="footer-links">)(.*?)(</div>)',
+                          lambda m: m.group(1) + m.group(2) + extra + m.group(3), text, count=1)
+        if new_text != text:
+            path.write_text(new_text, encoding="utf-8")
+
+
 def main() -> None:
     grouped = [slug for group in GRAMMAR_GROUPS for slug in group["slugs"]]
     grammar_slugs = {lesson["slug"] for lesson in GRAMMAR}
@@ -860,7 +880,7 @@ def main() -> None:
     )
 
     pages = ["/", "/vocabulary.html", "/grammar.html", "/practice.html", "/words.html", "/guides.html",
-             "/tools/tone-trainer.html"]
+             "/tools/tone-trainer.html", "/about.html", "/privacy.html"]
     pages.extend(f'/guides/{guide["slug"]}.html' for guide in GUIDES)
     pages.extend(f'/lessons/{lesson["slug"]}.html' for lesson in LESSONS)
     urlset = Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
@@ -870,6 +890,7 @@ def main() -> None:
         SubElement(item, "lastmod").text = BUILD_DATE
     xml = minidom.parseString(tostring(urlset, encoding="utf-8")).toprettyxml(indent="  ", encoding="UTF-8")
     (ROOT / "sitemap.xml").write_bytes(xml)
+    add_footer_links()
     print(f'Generated {len(LESSONS)} lesson pages, {len(DATA["words"])} indexed words, sitemap with {len(pages)} URLs.')
 
 
